@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2, Calendar, ShieldCheck, Zap, Clock, Users, Awa
 import { Button } from '../components/atoms/Button';
 import { SectionEyebrow, Heading, Paragraph } from '../components/atoms/Typography';
 import { ToolLogo } from '../components/atoms/ToolLogo';
+import { RevealOnScroll } from '../components/atoms/RevealOnScroll';
 import { ServiceSummaryCard } from '../components/molecules/ServiceSummaryCard';
 import { CaseStudyCard } from '../components/molecules/CaseStudyCard';
 import { TestimonialCard } from '../components/molecules/TestimonialCard';
@@ -48,13 +49,16 @@ export const HomePage = () => {
 
   return (
     <div>
-      {/* Hero Section — Perfectly balanced with wide, expansive showcase matching user's red box */}
+      {/* Hero Section — Animated Hero with Floating Living Widgets */}
       <section className="relative min-h-[calc(100vh-80px)] flex items-center pt-6 pb-14 sm:pt-8 sm:pb-16 lg:pt-8 lg:pb-16 overflow-hidden bg-gradient-to-b from-purple-50/70 via-slate-50 to-slate-50 dark:from-slate-800/40 dark:via-slate-900 dark:to-slate-900">
+        {/* Ambient Pulsing Glow in Background */}
+        <div className="absolute top-1/4 right-1/4 w-[400px] h-[400px] bg-purple-500/10 dark:bg-purple-600/10 rounded-full blur-3xl pointer-events-none animate-pulse-subtle" />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center">
-            {/* Left Content Column */}
-            <div className="lg:col-span-7 flex flex-col items-start z-10">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 text-xs font-semibold text-emerald-800 dark:text-emerald-300 mb-3 sm:mb-4">
+            {/* Left Content Column — Staggered Entrance Animations */}
+            <div className="lg:col-span-7 flex flex-col items-start z-10 animate-fade-in-up">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 text-xs font-semibold text-emerald-800 dark:text-emerald-300 mb-3 sm:mb-4 animate-fade-in-down">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                 <span>{profile.availabilityStatus}</span>
               </div>
@@ -74,6 +78,7 @@ export const HomePage = () => {
                   variant="primary"
                   size="lg"
                   icon={Calendar}
+                  className="hover:scale-105 transition-transform"
                 >
                   Book Discovery Call
                 </Button>
@@ -82,6 +87,7 @@ export const HomePage = () => {
                   variant="outline"
                   size="lg"
                   icon={ArrowRight}
+                  className="hover:scale-105 transition-transform"
                 >
                   Explore Services
                 </Button>
@@ -104,15 +110,15 @@ export const HomePage = () => {
               </div>
             </div>
 
-            {/* Right Showcase — Expanded Wide & Commanding (Exactly fills user's red box) */}
-            <div className="lg:col-span-5 relative flex items-center justify-center lg:justify-end">
+            {/* Right Showcase — Wide Card with Dynamic Animated Floating Widgets */}
+            <div className="lg:col-span-5 relative flex items-center justify-center lg:justify-end animate-fade-in-up" style={{ animationDelay: '200ms' }}>
               <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-[480px] xl:max-w-[530px]">
-                {/* Main Executive Portrait Card — Wide, balanced, proportional aspect ratio */}
-                <div className="relative rounded-3xl overflow-hidden aspect-[16/13] sm:aspect-[4/3] lg:aspect-[16/13] w-full shadow-2xl border-4 border-white dark:border-slate-800 bg-slate-100">
+                {/* Main Executive Portrait Card */}
+                <div className="group relative rounded-3xl overflow-hidden aspect-[16/13] sm:aspect-[4/3] lg:aspect-[16/13] w-full shadow-2xl border-4 border-white dark:border-slate-800 bg-slate-100 transition-transform duration-500 hover:scale-[1.01]">
                   <img
                     src={profile.avatar}
                     alt={profile.name}
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/10 to-transparent" />
                   <div className="absolute bottom-5 left-5 right-5 text-white z-10">
@@ -124,8 +130,8 @@ export const HomePage = () => {
                   </div>
                 </div>
 
-                {/* Floating Widget 1: Live Notification Pill */}
-                <div className="absolute -top-3.5 -left-3 sm:-top-4 sm:-left-5 bg-white dark:bg-slate-800 p-3 sm:p-3.5 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3 max-w-[240px] z-20">
+                {/* Floating Widget 1: Floating Up/Down Animation */}
+                <div className="absolute -top-3.5 -left-3 sm:-top-4 sm:-left-5 bg-white dark:bg-slate-800 p-3 sm:p-3.5 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3 max-w-[240px] z-20 animate-float">
                   <div className="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
                     <Check className="w-4 h-4" />
                   </div>
@@ -135,8 +141,8 @@ export const HomePage = () => {
                   </div>
                 </div>
 
-                {/* Floating Widget 2: Hours Saved Metric (Within safe bounds) */}
-                <div className="absolute bottom-4 right-4 sm:bottom-5 sm:right-5 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3 z-20">
+                {/* Floating Widget 2: Reverse Floating Animation (Asynchronous Breathing) */}
+                <div className="absolute bottom-4 right-4 sm:bottom-5 sm:right-5 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3 z-20 animate-float-reverse">
                   <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-lg shrink-0">
                     ⚡
                   </div>
@@ -151,193 +157,212 @@ export const HomePage = () => {
         </div>
       </section>
 
-      {/* Social Proof Brand Logobar */}
+      {/* Social Proof Brand Logobar — Animated On Scroll */}
       <section className="py-8 bg-white dark:bg-slate-800/80 border-y border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-            <span className="text-xs uppercase font-bold tracking-wider text-slate-400 dark:text-slate-500 whitespace-nowrap">
-              Trusted by leaders backed by:
-            </span>
-            <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 text-slate-400 dark:text-slate-500 font-bold text-sm tracking-wider">
-              <span className="hover:text-purple-600 transition-colors">Y COMBINATOR ALUMNI</span>
-              <span className="hover:text-purple-600 transition-colors">TECHSTARS</span>
-              <span className="hover:text-purple-600 transition-colors">SEQUOIA SCOUTS</span>
-              <span className="hover:text-purple-600 transition-colors">MAVEN INSTRUCTORS</span>
+          <RevealOnScroll direction="up">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span className="text-xs uppercase font-bold tracking-wider text-slate-400 dark:text-slate-500 whitespace-nowrap">
+                Trusted by leaders backed by:
+              </span>
+              <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 text-slate-400 dark:text-slate-500 font-bold text-sm tracking-wider">
+                <span className="hover:text-purple-600 transition-colors">Y COMBINATOR ALUMNI</span>
+                <span className="hover:text-purple-600 transition-colors">TECHSTARS</span>
+                <span className="hover:text-purple-600 transition-colors">SEQUOIA SCOUTS</span>
+                <span className="hover:text-purple-600 transition-colors">MAVEN INSTRUCTORS</span>
+              </div>
             </div>
-          </div>
+          </RevealOnScroll>
         </div>
       </section>
 
-      {/* Visual Workspace & Operations Gallery Section */}
+      {/* Visual Workspace & Operations Gallery Section — Animated On Scroll */}
       <section className="py-20 bg-slate-50 dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <div>
-              <SectionEyebrow>Inside The Operations</SectionEyebrow>
-              <Heading level={2}>A Look Into Frictionless Daily Management</Heading>
-              <Paragraph size="md" muted className="mt-2 max-w-xl">
-                See how precision systems transform messy, scattered tasks into streamlined daily executive momentum.
-              </Paragraph>
+          <RevealOnScroll direction="up">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+              <div>
+                <SectionEyebrow>Inside The Operations</SectionEyebrow>
+                <Heading level={2}>A Look Into Frictionless Daily Management</Heading>
+                <Paragraph size="md" muted className="mt-2 max-w-xl">
+                  See how precision systems transform messy, scattered tasks into streamlined daily executive momentum.
+                </Paragraph>
+              </div>
+              <Button to="/services" variant="outline" size="sm" icon={ArrowRight}>
+                See All Capabilities
+              </Button>
             </div>
-            <Button to="/services" variant="outline" size="sm" icon={ArrowRight}>
-              See All Capabilities
-            </Button>
-          </div>
+          </RevealOnScroll>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {operationalGallery.map((item, idx) => (
-              <div
-                key={idx}
-                className="group rounded-2xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-xl hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 flex flex-col"
-              >
-                <div className="relative aspect-[4/3] overflow-hidden bg-slate-200 dark:bg-slate-700">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute top-3 left-3">
-                    <span className="text-[10px] font-bold uppercase tracking-wider bg-white/90 dark:bg-slate-900/90 text-purple-700 dark:text-purple-300 px-2.5 py-1 rounded-full backdrop-blur-sm border border-slate-200/50 dark:border-slate-700">
-                      {item.category}
-                    </span>
+              <RevealOnScroll key={idx} delay={idx * 120} direction="up">
+                <div className="group rounded-2xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-xl hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 flex flex-col h-full">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-slate-200 dark:bg-slate-700">
+                    <img
+                      src={item.image}
+                      alt={item.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute top-3 left-3">
+                      <span className="text-[10px] font-bold uppercase tracking-wider bg-white/90 dark:bg-slate-900/90 text-purple-700 dark:text-purple-300 px-2.5 py-1 rounded-full backdrop-blur-sm border border-slate-200/50 dark:border-slate-700">
+                        {item.category}
+                      </span>
+                    </div>
+                  </div>
+                  <div className="p-5 flex flex-col justify-between flex-grow">
+                    <div>
+                      <h3 className="text-base font-bold text-slate-900 dark:text-white mb-1.5 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div className="p-5 flex flex-col justify-between flex-grow">
-                  <div>
-                    <h3 className="text-base font-bold text-slate-900 dark:text-white mb-1.5 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
+              </RevealOnScroll>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Software & Tech Stack Proficiency with Real Brand Logos */}
+      {/* Software & Tech Stack Proficiency with Real Brand Logos — Staggered Reveal */}
       <section className="py-20 bg-white dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
-          <SectionEyebrow className="justify-center">Tech Stack Mastery</SectionEyebrow>
-          <Heading level={2}>Seamless Integration With Your Existing Tools</Heading>
-          <Paragraph size="md" muted className="mt-3 max-w-xl mx-auto">
-            Zero ramp-up time required. I am already fluent in the core platforms modern startups and remote teams depend on.
-          </Paragraph>
+          <RevealOnScroll direction="up">
+            <SectionEyebrow className="justify-center">Tech Stack Mastery</SectionEyebrow>
+            <Heading level={2}>Seamless Integration With Your Existing Tools</Heading>
+            <Paragraph size="md" muted className="mt-3 max-w-xl mx-auto">
+              Zero ramp-up time required. I am already fluent in the core platforms modern startups and remote teams depend on.
+            </Paragraph>
+          </RevealOnScroll>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
             {tools.map((t, idx) => (
-              <div
-                key={idx}
-                className="group p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 flex flex-col items-center text-center shadow-sm hover:border-purple-500 hover:shadow-lg transition-all duration-200"
-              >
-                {/* Real Brand Logo */}
-                <div className="mb-3 transform group-hover:scale-110 transition-transform duration-200 flex items-center justify-center">
-                  <ToolLogo name={t.name} className="w-10 h-10" />
+              <RevealOnScroll key={idx} delay={(idx % 6) * 80} direction="up">
+                <div className="group p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 flex flex-col items-center text-center shadow-sm hover:border-purple-500 hover:shadow-lg transition-all duration-200 h-full justify-between">
+                  {/* Real Brand Logo */}
+                  <div className="mb-3 transform group-hover:scale-110 transition-transform duration-200 flex items-center justify-center">
+                    <ToolLogo name={t.name} className="w-10 h-10" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-0.5">{t.name}</h4>
+                    <span className="text-[11px] text-slate-500 dark:text-slate-400 mb-3 block">{t.category}</span>
+                  </div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700 dark:text-purple-300 bg-purple-100 dark:bg-purple-950/80 px-2.5 py-1 rounded-full border border-purple-200 dark:border-purple-800/60">
+                    {t.proficiency}
+                  </span>
                 </div>
-                <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-0.5">{t.name}</h4>
-                <span className="text-[11px] text-slate-500 dark:text-slate-400 mb-3">{t.category}</span>
-                <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700 dark:text-purple-300 bg-purple-100 dark:bg-purple-950/80 px-2.5 py-1 rounded-full border border-purple-200 dark:border-purple-800/60">
-                  {t.proficiency}
-                </span>
-              </div>
+              </RevealOnScroll>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Services Preview */}
+      {/* Featured Services Preview — Animated On Scroll */}
       <section className="py-20 bg-slate-100/60 dark:bg-slate-800/30 border-y border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <div>
-              <SectionEyebrow>Core Capabilities</SectionEyebrow>
-              <Heading level={2}>Specialized Operations Support</Heading>
-              <Paragraph size="md" muted className="mt-2 max-w-lg">
-                Comprehensive executive support designed to relieve cognitive overload and streamline team execution.
-              </Paragraph>
+          <RevealOnScroll direction="up">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+              <div>
+                <SectionEyebrow>Core Capabilities</SectionEyebrow>
+                <Heading level={2}>Specialized Operations Support</Heading>
+                <Paragraph size="md" muted className="mt-2 max-w-lg">
+                  Comprehensive executive support designed to relieve cognitive overload and streamline team execution.
+                </Paragraph>
+              </div>
+              <Button to="/services" variant="outline" size="md" icon={ArrowRight}>
+                View All 6 Services & Deliverables
+              </Button>
             </div>
-            <Button to="/services" variant="outline" size="md" icon={ArrowRight}>
-              View All 6 Services & Deliverables
-            </Button>
-          </div>
+          </RevealOnScroll>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.slice(0, 3).map((service) => (
-              <ServiceSummaryCard key={service.id} service={service} />
+            {services.slice(0, 3).map((service, idx) => (
+              <RevealOnScroll key={service.id} delay={idx * 150} direction="up">
+                <ServiceSummaryCard service={service} />
+              </RevealOnScroll>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4-Step Collaborative Workflow */}
+      {/* 4-Step Collaborative Workflow — Animated Steps */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-2xl mb-16">
-          <SectionEyebrow className="justify-center">Simple Onboarding</SectionEyebrow>
-          <Heading level={2}>How We Work Together</Heading>
-          <Paragraph size="md" muted className="mt-3">
-            Getting high-level administrative support shouldn't create more work for you. Here is our effortless 4-step framework:
-          </Paragraph>
+          <RevealOnScroll direction="up">
+            <SectionEyebrow className="justify-center">Simple Onboarding</SectionEyebrow>
+            <Heading level={2}>How We Work Together</Heading>
+            <Paragraph size="md" muted className="mt-3">
+              Getting high-level administrative support shouldn't create more work for you. Here is our effortless 4-step framework:
+            </Paragraph>
+          </RevealOnScroll>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map((st, idx) => (
-              <div
-                key={idx}
-                className="p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm relative overflow-hidden"
-              >
-                <span className="text-4xl font-extrabold text-purple-200 dark:text-purple-900/40 block mb-4">
-                  {st.number}
-                </span>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{st.title}</h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-normal">{st.desc}</p>
-              </div>
+              <RevealOnScroll key={idx} delay={idx * 120} direction="up">
+                <div className="p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm relative overflow-hidden h-full hover:border-purple-400 transition-colors">
+                  <span className="text-4xl font-extrabold text-purple-200 dark:text-purple-900/40 block mb-4">
+                    {st.number}
+                  </span>
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{st.title}</h3>
+                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-normal">{st.desc}</p>
+                </div>
+              </RevealOnScroll>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Case Study Highlight */}
+      {/* Featured Case Study Highlight — Animated Card */}
       <section className="py-20 bg-slate-100/60 dark:bg-slate-800/30 border-y border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-            <div>
-              <SectionEyebrow>Proven Client Wins</SectionEyebrow>
-              <Heading level={2}>Real Results for Real Founders</Heading>
-              <Paragraph size="md" muted className="mt-2 max-w-lg">
-                Explore how operational delegation translated directly into reclaimed time, higher revenue, and zero missed deadlines.
-              </Paragraph>
+          <RevealOnScroll direction="up">
+            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+              <div>
+                <SectionEyebrow>Proven Client Wins</SectionEyebrow>
+                <Heading level={2}>Real Results for Real Founders</Heading>
+                <Paragraph size="md" muted className="mt-2 max-w-lg">
+                  Explore how operational delegation translated directly into reclaimed time, higher revenue, and zero missed deadlines.
+                </Paragraph>
+              </div>
+              <Button to="/case-studies" variant="outline" size="md" icon={ArrowRight}>
+                Read All Case Studies
+              </Button>
             </div>
-            <Button to="/case-studies" variant="outline" size="md" icon={ArrowRight}>
-              Read All Case Studies
-            </Button>
-          </div>
+          </RevealOnScroll>
 
           <div className="max-w-4xl mx-auto">
-            <CaseStudyCard caseStudy={caseStudies[0]} />
+            <RevealOnScroll delay={150} direction="up">
+              <CaseStudyCard caseStudy={caseStudies[0]} />
+            </RevealOnScroll>
           </div>
         </div>
       </section>
 
-      {/* Client Endorsements / Testimonials */}
+      {/* Client Endorsements / Testimonials — Staggered Card Reveals */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-2xl mb-16">
-          <SectionEyebrow className="justify-center">Client Endorsements</SectionEyebrow>
-          <Heading level={2}>Trusted by Founders & Executives Worldwide</Heading>
-          <Paragraph size="md" muted className="mt-3">
-            Read what entrepreneurs from New York to Melbourne have to say about partnering with Aria Vance Virtual Co.
-          </Paragraph>
+          <RevealOnScroll direction="up">
+            <SectionEyebrow className="justify-center">Client Endorsements</SectionEyebrow>
+            <Heading level={2}>Trusted by Founders & Executives Worldwide</Heading>
+            <Paragraph size="md" muted className="mt-3">
+              Read what entrepreneurs from New York to Melbourne have to say about partnering with Aria Vance Virtual Co.
+            </Paragraph>
+          </RevealOnScroll>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, idx) => (
-              <TestimonialCard key={idx} testimonial={t} />
+              <RevealOnScroll key={idx} delay={idx * 150} direction="up">
+                <TestimonialCard testimonial={t} />
+              </RevealOnScroll>
             ))}
           </div>
         </div>
