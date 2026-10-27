@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, Calendar, ShieldCheck, Zap, Clock, Users, Award, Star, Check, Mail, Bell, Sparkles } from 'lucide-react';
 import { Button } from '../components/atoms/Button';
 import { SectionEyebrow, Heading, Paragraph } from '../components/atoms/Typography';
+import { ToolLogo } from '../components/atoms/ToolLogo';
 import { ServiceSummaryCard } from '../components/molecules/ServiceSummaryCard';
 import { CaseStudyCard } from '../components/molecules/CaseStudyCard';
 import { TestimonialCard } from '../components/molecules/TestimonialCard';
@@ -47,31 +48,31 @@ export const HomePage = () => {
 
   return (
     <div>
-      {/* Hero Section — Calibrated to fit 1 screen height on desktop (100vh - 80px navbar) */}
-      <section className="relative min-h-[calc(100vh-80px)] lg:h-[calc(100vh-80px)] lg:max-h-[calc(100vh-80px)] flex items-center py-6 lg:py-0 overflow-hidden bg-gradient-to-b from-purple-50/70 via-slate-50 to-slate-50 dark:from-slate-800/40 dark:via-slate-900 dark:to-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+      {/* Hero Section — Balanced, Uncompressed, Screen-Filling Presence */}
+      <section className="relative min-h-[calc(100vh-80px)] flex items-center py-12 lg:py-16 overflow-hidden bg-gradient-to-b from-purple-50/70 via-slate-50 to-slate-50 dark:from-slate-800/40 dark:via-slate-900 dark:to-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Content Column */}
             <div className="lg:col-span-7 flex flex-col items-start z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 text-[11px] font-semibold text-emerald-800 dark:text-emerald-300 mb-2 lg:mb-3">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 text-xs font-semibold text-emerald-800 dark:text-emerald-300 mb-5">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                 <span>{profile.availabilityStatus}</span>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15] mb-2 lg:mb-3">
-                Reclaim <span className="text-purple-600 dark:text-purple-400 underline decoration-purple-300 underline-offset-8">20+ Hours</span> of Focus Every Single Week.
+              <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-5">
+                Reclaim <span className="text-purple-600 dark:text-purple-400 underline decoration-purple-300 dark:decoration-purple-500 underline-offset-8">20+ Hours</span> of Focus Every Single Week.
               </h1>
 
-              <p className="text-xs sm:text-sm lg:text-xs xl:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-lg mb-4 font-normal">
+              <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl mb-7 font-normal">
                 I partner with high-growth CEOs, founders, and boutique agencies as a high-level <strong>Executive Virtual Assistant & Operations Partner</strong>. Let me handle calendar choreography, inbox zero, customer success, and team task management.
               </p>
 
               {/* CTAs */}
-              <div className="flex flex-wrap items-center gap-3 mb-4">
+              <div className="flex flex-wrap items-center gap-4 mb-8">
                 <Button
                   to="/contact"
                   variant="primary"
-                  size="md"
+                  size="lg"
                   icon={Calendar}
                 >
                   Book Discovery Call
@@ -79,7 +80,7 @@ export const HomePage = () => {
                 <Button
                   to="/services"
                   variant="outline"
-                  size="md"
+                  size="lg"
                   icon={ArrowRight}
                 >
                   Explore Services
@@ -87,61 +88,61 @@ export const HomePage = () => {
               </div>
 
               {/* Trust Badges */}
-              <div className="pt-3 border-t border-slate-200 dark:border-slate-800 grid grid-cols-3 gap-3 text-[11px] font-medium text-slate-600 dark:text-slate-400 w-full max-w-lg">
-                <div className="flex items-center gap-1.5">
-                  <ShieldCheck className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400 shrink-0" />
+              <div className="pt-6 border-t border-slate-200 dark:border-slate-800 grid grid-cols-3 gap-6 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 w-full max-w-xl">
+                <div className="flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5 text-purple-600 dark:text-purple-400 shrink-0" />
                   <span>Strict NDA Signed</span>
                 </div>
-                <div className="flex items-center gap-1.5">
-                  <Clock className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400 shrink-0" />
+                <div className="flex items-center gap-2">
+                  <Clock className="w-5 h-5 text-purple-600 dark:text-purple-400 shrink-0" />
                   <span>EST / PST / AEST</span>
                 </div>
-                <div className="flex items-center gap-1.5">
-                  <Award className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400 shrink-0" />
+                <div className="flex items-center gap-2">
+                  <Award className="w-5 h-5 text-purple-600 dark:text-purple-400 shrink-0" />
                   <span>6+ Yrs Experience</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Layered Visual Collage (Rich imagery + floating UI cards) */}
+            {/* Right Layered Visual Hero Showcase */}
             <div className="lg:col-span-5 relative flex items-center justify-center">
-              <div className="relative mx-auto w-full max-w-xs sm:max-w-sm lg:max-w-[360px] xl:max-w-[400px]">
-                {/* Main Portrait Card */}
-                <div className="relative rounded-3xl overflow-hidden aspect-[4/5] max-h-[46vh] sm:max-h-[50vh] lg:max-h-[52vh] xl:max-h-[56vh] w-full shadow-2xl border-4 border-white dark:border-slate-800 bg-slate-100">
+              <div className="relative mx-auto w-full max-w-sm sm:max-w-md lg:max-w-[440px] xl:max-w-[480px]">
+                {/* Main Executive Portrait Card */}
+                <div className="relative rounded-3xl overflow-hidden aspect-[4/5] w-full shadow-2xl border-4 border-white dark:border-slate-800 bg-slate-100">
                   <img
                     src={profile.avatar}
                     alt={profile.name}
                     className="w-full h-full object-cover object-top"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/10 to-transparent" />
-                  <div className="absolute bottom-4 left-4 right-4 text-white">
-                    <span className="text-[10px] uppercase tracking-wider font-bold text-purple-300 block mb-0.5">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/10 to-transparent" />
+                  <div className="absolute bottom-6 left-6 right-6 text-white">
+                    <span className="text-xs uppercase tracking-wider font-bold text-purple-300 block mb-1">
                       Operations Partner
                     </span>
-                    <h3 className="text-base sm:text-lg font-bold">{profile.name}</h3>
-                    <p className="text-[11px] text-slate-300">Fluent in Asana, Notion, ClickUp & Zendesk</p>
+                    <h3 className="text-xl sm:text-2xl font-bold">{profile.name}</h3>
+                    <p className="text-xs text-slate-300 mt-0.5">Fluent in Asana, Notion, ClickUp & Zendesk</p>
                   </div>
                 </div>
 
                 {/* Floating Widget 1: Live Notification Pill */}
-                <div className="absolute -top-3 -left-4 sm:-top-4 sm:-left-6 bg-white dark:bg-slate-800 p-2.5 sm:p-3 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-2.5 max-w-[210px] animate-pulse">
-                  <div className="w-7 h-7 rounded-lg bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
-                    <Check className="w-4 h-4" />
+                <div className="absolute -top-4 -left-4 sm:-top-5 sm:-left-6 bg-white dark:bg-slate-800 p-3.5 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3 max-w-[240px]">
+                  <div className="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                    <Check className="w-5 h-5" />
                   </div>
-                  <div className="text-[10px] leading-tight">
+                  <div className="text-xs leading-tight">
                     <span className="font-bold text-slate-800 dark:text-white block">Inbox Zero Achieved</span>
-                    <span className="text-slate-400">0 unread emails today</span>
+                    <span className="text-slate-500 dark:text-slate-400">0 unread emails today</span>
                   </div>
                 </div>
 
                 {/* Floating Widget 2: Hours Saved Metric */}
-                <div className="absolute -bottom-3 -right-4 sm:-bottom-4 sm:-right-6 bg-white dark:bg-slate-800 p-2.5 sm:p-3 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-base shrink-0">
+                <div className="absolute -bottom-4 -right-4 sm:-bottom-5 sm:-right-6 bg-white dark:bg-slate-800 p-3.5 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-lg shrink-0">
                     ⚡
                   </div>
                   <div>
-                    <span className="block text-sm font-extrabold text-slate-900 dark:text-white">3,800+ hrs</span>
-                    <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium">Reclaimed for CEOs</span>
+                    <span className="block text-base font-extrabold text-slate-900 dark:text-white">3,800+ hrs</span>
+                    <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">Reclaimed for CEOs</span>
                   </div>
                 </div>
               </div>
@@ -217,7 +218,7 @@ export const HomePage = () => {
         </div>
       </section>
 
-      {/* Software & Tech Stack Proficiency */}
+      {/* Software & Tech Stack Proficiency with Real Brand Logos */}
       <section className="py-20 bg-white dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
           <SectionEyebrow className="justify-center">Tech Stack Mastery</SectionEyebrow>
@@ -228,18 +229,19 @@ export const HomePage = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
             {tools.map((t, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 flex flex-col items-center text-center shadow-sm hover:border-purple-400 transition-all"
+                className="group p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 flex flex-col items-center text-center shadow-sm hover:border-purple-500 hover:shadow-lg transition-all duration-200"
               >
-                <div className="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold mb-2">
-                  {t.name.charAt(0)}
+                {/* Real Brand Logo */}
+                <div className="mb-3 transform group-hover:scale-110 transition-transform duration-200 flex items-center justify-center">
+                  <ToolLogo name={t.name} className="w-10 h-10" />
                 </div>
-                <h4 className="text-sm font-bold text-slate-900 dark:text-white">{t.name}</h4>
-                <span className="text-[11px] text-slate-500 dark:text-slate-400">{t.category}</span>
-                <span className="mt-2 text-[10px] font-semibold uppercase tracking-wider text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/60 px-2 py-0.5 rounded-full">
+                <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-0.5">{t.name}</h4>
+                <span className="text-[11px] text-slate-500 dark:text-slate-400 mb-3">{t.category}</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700 dark:text-purple-300 bg-purple-100 dark:bg-purple-950/80 px-2.5 py-1 rounded-full border border-purple-200 dark:border-purple-800/60">
                   {t.proficiency}
                 </span>
               </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { HeroBanner } from '../components/organisms/HeroBanner';
 import { SectionEyebrow, Heading, Paragraph } from '../components/atoms/Typography';
 import { Badge } from '../components/atoms/Badge';
+import { ToolLogo } from '../components/atoms/ToolLogo';
 import { ShieldCheck, HeartHandshake, Eye, Sparkles, Clock, MapPin, CheckCircle2 } from 'lucide-react';
 import { vaData } from '../data/vaData';
 
@@ -147,11 +148,14 @@ export const AboutPage = () => {
             {tools.map((t, idx) => (
               <div
                 key={idx}
-                className="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 flex items-center justify-between shadow-sm"
+                className="p-5 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 flex items-center justify-between shadow-sm group hover:border-purple-500 transition-all"
               >
-                <div>
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white">{t.name}</h4>
-                  <span className="text-xs text-slate-500 dark:text-slate-400">{t.category}</span>
+                <div className="flex items-center gap-3.5">
+                  <ToolLogo name={t.name} className="w-8 h-8 shrink-0 group-hover:scale-110 transition-transform" />
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-900 dark:text-white">{t.name}</h4>
+                    <span className="text-xs text-slate-500 dark:text-slate-400">{t.category}</span>
+                  </div>
                 </div>
                 <Badge variant="default" size="xs">
                   {t.proficiency}
