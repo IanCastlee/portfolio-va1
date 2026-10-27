@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Calendar, ShieldCheck, Zap, Clock, Users, Award, Star } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Calendar, ShieldCheck, Zap, Clock, Users, Award, Star, Check, Mail, Bell, Sparkles } from 'lucide-react';
 import { Button } from '../components/atoms/Button';
 import { SectionEyebrow, Heading, Paragraph } from '../components/atoms/Typography';
 import { ServiceSummaryCard } from '../components/molecules/ServiceSummaryCard';
@@ -18,33 +18,60 @@ export const HomePage = () => {
     { number: "04", title: "Effortless Execution", desc: "Continuous daily task execution, proactive problem-solving, and weekly time logs." }
   ];
 
+  const operationalGallery = [
+    {
+      title: "Executive Calendar Mastery",
+      category: "Calendar Choreography",
+      image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80",
+      description: "Color-coded priority buffers, timezone synchronization, and zero double-booked meetings."
+    },
+    {
+      title: "Notion Systems & SOP Hubs",
+      category: "Operations Architecture",
+      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80",
+      description: "Turning recurring manual tasks into step-by-step institutional guides with Loom walkthroughs."
+    },
+    {
+      title: "Zero-Inbox Triage System",
+      category: "Inbox Zero Protocol",
+      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80",
+      description: "Automated filters, VIP labeling, and canned templates clearing out 150+ daily emails."
+    },
+    {
+      title: "Global Client Coordination",
+      category: "Worldwide Remote Sync",
+      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+      description: "Seamless team accountability across New York, London, Singapore, and Sydney timezones."
+    }
+  ];
+
   return (
     <div>
-      {/* Hero Section */}
-      <section className="relative pt-12 pb-20 sm:pt-20 sm:pb-28 overflow-hidden bg-gradient-to-b from-purple-50/70 via-slate-50 to-slate-50 dark:from-slate-800/40 dark:via-slate-900 dark:to-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            {/* Left Content */}
-            <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 text-xs font-semibold text-emerald-800 dark:text-emerald-300">
+      {/* Hero Section — Calibrated to fit 1 screen height on desktop (100vh - 80px navbar) */}
+      <section className="relative min-h-[calc(100vh-80px)] lg:h-[calc(100vh-80px)] lg:max-h-[calc(100vh-80px)] flex items-center py-6 lg:py-0 overflow-hidden bg-gradient-to-b from-purple-50/70 via-slate-50 to-slate-50 dark:from-slate-800/40 dark:via-slate-900 dark:to-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+            {/* Left Content Column */}
+            <div className="lg:col-span-7 flex flex-col items-start z-10">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 text-[11px] font-semibold text-emerald-800 dark:text-emerald-300 mb-2 lg:mb-3">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span>{profile.availabilityStatus}</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12]">
+              <h1 className="text-3xl sm:text-4xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.15] mb-2 lg:mb-3">
                 Reclaim <span className="text-purple-600 dark:text-purple-400 underline decoration-purple-300 underline-offset-8">20+ Hours</span> of Focus Every Single Week.
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl font-normal">
+              <p className="text-xs sm:text-sm lg:text-xs xl:text-sm text-slate-600 dark:text-slate-300 leading-relaxed max-w-lg mb-4 font-normal">
                 I partner with high-growth CEOs, founders, and boutique agencies as a high-level <strong>Executive Virtual Assistant & Operations Partner</strong>. Let me handle calendar choreography, inbox zero, customer success, and team task management.
               </p>
 
               {/* CTAs */}
-              <div className="flex flex-wrap items-center gap-4 pt-2">
+              <div className="flex flex-wrap items-center gap-3 mb-4">
                 <Button
                   to="/contact"
                   variant="primary"
-                  size="lg"
+                  size="md"
                   icon={Calendar}
                 >
                   Book Discovery Call
@@ -52,7 +79,7 @@ export const HomePage = () => {
                 <Button
                   to="/services"
                   variant="outline"
-                  size="lg"
+                  size="md"
                   icon={ArrowRight}
                 >
                   Explore Services
@@ -60,60 +87,62 @@ export const HomePage = () => {
               </div>
 
               {/* Trust Badges */}
-              <div className="pt-6 border-t border-slate-200 dark:border-slate-800 grid grid-cols-3 gap-4 text-xs font-medium text-slate-600 dark:text-slate-400">
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0" />
+              <div className="pt-3 border-t border-slate-200 dark:border-slate-800 grid grid-cols-3 gap-3 text-[11px] font-medium text-slate-600 dark:text-slate-400 w-full max-w-lg">
+                <div className="flex items-center gap-1.5">
+                  <ShieldCheck className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400 shrink-0" />
                   <span>Strict NDA Signed</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0" />
+                <div className="flex items-center gap-1.5">
+                  <Clock className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400 shrink-0" />
                   <span>EST / PST / AEST</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Award className="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0" />
+                <div className="flex items-center gap-1.5">
+                  <Award className="w-3.5 h-3.5 text-purple-600 dark:text-purple-400 shrink-0" />
                   <span>6+ Yrs Experience</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Hero Image & Stats Card */}
-            <div className="lg:col-span-5 relative">
-              <div className="relative mx-auto max-w-md lg:max-w-none">
-                <div className="relative rounded-3xl overflow-hidden aspect-[4/5] shadow-2xl border-4 border-white dark:border-slate-800">
+            {/* Right Layered Visual Collage (Rich imagery + floating UI cards) */}
+            <div className="lg:col-span-5 relative flex items-center justify-center">
+              <div className="relative mx-auto w-full max-w-xs sm:max-w-sm lg:max-w-[360px] xl:max-w-[400px]">
+                {/* Main Portrait Card */}
+                <div className="relative rounded-3xl overflow-hidden aspect-[4/5] max-h-[46vh] sm:max-h-[50vh] lg:max-h-[52vh] xl:max-h-[56vh] w-full shadow-2xl border-4 border-white dark:border-slate-800 bg-slate-100">
                   <img
                     src={profile.avatar}
                     alt={profile.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover object-top"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 text-white">
-                    <span className="text-xs uppercase tracking-wider font-bold text-purple-300 block mb-1">
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/85 via-slate-900/10 to-transparent" />
+                  <div className="absolute bottom-4 left-4 right-4 text-white">
+                    <span className="text-[10px] uppercase tracking-wider font-bold text-purple-300 block mb-0.5">
                       Operations Partner
                     </span>
-                    <h3 className="text-xl font-bold">{profile.name}</h3>
-                    <p className="text-xs text-slate-300 mt-1">Specialized in Asana, Notion, ClickUp & Zendesk</p>
+                    <h3 className="text-base sm:text-lg font-bold">{profile.name}</h3>
+                    <p className="text-[11px] text-slate-300">Fluent in Asana, Notion, ClickUp & Zendesk</p>
                   </div>
                 </div>
 
-                {/* Floating Stat Chip */}
-                <div className="absolute -bottom-6 -left-6 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 hidden sm:flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-xl">
+                {/* Floating Widget 1: Live Notification Pill */}
+                <div className="absolute -top-3 -left-4 sm:-top-4 sm:-left-6 bg-white dark:bg-slate-800 p-2.5 sm:p-3 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-2.5 max-w-[210px] animate-pulse">
+                  <div className="w-7 h-7 rounded-lg bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                    <Check className="w-4 h-4" />
+                  </div>
+                  <div className="text-[10px] leading-tight">
+                    <span className="font-bold text-slate-800 dark:text-white block">Inbox Zero Achieved</span>
+                    <span className="text-slate-400">0 unread emails today</span>
+                  </div>
+                </div>
+
+                {/* Floating Widget 2: Hours Saved Metric */}
+                <div className="absolute -bottom-3 -right-4 sm:-bottom-4 sm:-right-6 bg-white dark:bg-slate-800 p-2.5 sm:p-3 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-base shrink-0">
                     ⚡
                   </div>
                   <div>
-                    <span className="block text-2xl font-extrabold text-slate-900 dark:text-white">3,800+</span>
-                    <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">Hours Reclaimed for Clients</span>
+                    <span className="block text-sm font-extrabold text-slate-900 dark:text-white">3,800+ hrs</span>
+                    <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium">Reclaimed for CEOs</span>
                   </div>
-                </div>
-
-                {/* Floating Review Chip */}
-                <div className="absolute -top-4 -right-4 bg-white dark:bg-slate-800 py-3 px-4 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 hidden sm:flex items-center gap-2">
-                  <div className="flex text-amber-400">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
-                    ))}
-                  </div>
-                  <span className="text-xs font-bold text-slate-800 dark:text-white">5.0 (48+ Founders)</span>
                 </div>
               </div>
             </div>
@@ -121,18 +150,67 @@ export const HomePage = () => {
         </div>
       </section>
 
-      {/* Stats Counter Bar */}
-      <section className="py-12 bg-white dark:bg-slate-800/50 border-y border-slate-200 dark:border-slate-800">
+      {/* Social Proof Brand Logobar */}
+      <section className="py-8 bg-white dark:bg-slate-800/80 border-y border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {stats.map((stat, idx) => (
-              <div key={idx} className="space-y-1">
-                <span className="text-3xl sm:text-4xl font-extrabold text-purple-600 dark:text-purple-400 tracking-tight">
-                  {stat.value}
-                </span>
-                <p className="text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-400">
-                  {stat.label}
-                </p>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span className="text-xs uppercase font-bold tracking-wider text-slate-400 dark:text-slate-500 whitespace-nowrap">
+              Trusted by leaders backed by:
+            </span>
+            <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 text-slate-400 dark:text-slate-500 font-bold text-sm tracking-wider">
+              <span className="hover:text-purple-600 transition-colors">Y COMBINATOR ALUMNI</span>
+              <span className="hover:text-purple-600 transition-colors">TECHSTARS</span>
+              <span className="hover:text-purple-600 transition-colors">SEQUOIA SCOUTS</span>
+              <span className="hover:text-purple-600 transition-colors">MAVEN INSTRUCTORS</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Visual Workspace & Operations Gallery Section */}
+      <section className="py-20 bg-slate-50 dark:bg-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <SectionEyebrow>Inside The Operations</SectionEyebrow>
+              <Heading level={2}>A Look Into Frictionless Daily Management</Heading>
+              <Paragraph size="md" muted className="mt-2 max-w-xl">
+                See how precision systems transform messy, scattered tasks into streamlined daily executive momentum.
+              </Paragraph>
+            </div>
+            <Button to="/services" variant="outline" size="sm" icon={ArrowRight}>
+              See All Capabilities
+            </Button>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {operationalGallery.map((item, idx) => (
+              <div
+                key={idx}
+                className="group rounded-2xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-xl hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 flex flex-col"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden bg-slate-200 dark:bg-slate-700">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute top-3 left-3">
+                    <span className="text-[10px] font-bold uppercase tracking-wider bg-white/90 dark:bg-slate-900/90 text-purple-700 dark:text-purple-300 px-2.5 py-1 rounded-full backdrop-blur-sm border border-slate-200/50 dark:border-slate-700">
+                      {item.category}
+                    </span>
+                  </div>
+                </div>
+                <div className="p-5 flex flex-col justify-between flex-grow">
+                  <div>
+                    <h3 className="text-base font-bold text-slate-900 dark:text-white mb-1.5 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -140,7 +218,7 @@ export const HomePage = () => {
       </section>
 
       {/* Software & Tech Stack Proficiency */}
-      <section className="py-20">
+      <section className="py-20 bg-white dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
           <SectionEyebrow className="justify-center">Tech Stack Mastery</SectionEyebrow>
           <Heading level={2}>Seamless Integration With Your Existing Tools</Heading>
@@ -154,9 +232,9 @@ export const HomePage = () => {
             {tools.map((t, idx) => (
               <div
                 key={idx}
-                className="p-4 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 flex flex-col items-center text-center shadow-sm hover:border-purple-400 transition-all"
+                className="p-4 rounded-xl bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 flex flex-col items-center text-center shadow-sm hover:border-purple-400 transition-all"
               >
-                <div className="w-10 h-10 rounded-lg bg-purple-50 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold mb-2">
+                <div className="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-950/40 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold mb-2">
                   {t.name.charAt(0)}
                 </div>
                 <h4 className="text-sm font-bold text-slate-900 dark:text-white">{t.name}</h4>
