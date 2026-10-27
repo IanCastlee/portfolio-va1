@@ -48,11 +48,11 @@ export const HomePage = () => {
 
   return (
     <div>
-      {/* Hero Section — Lifted up with guaranteed 30px+ bottom clearance on desktop */}
-      <section className="relative min-h-[calc(100vh-80px)] flex items-center pt-4 pb-12 sm:pt-6 sm:pb-14 lg:pt-6 lg:pb-16 overflow-hidden bg-gradient-to-b from-purple-50/70 via-slate-50 to-slate-50 dark:from-slate-800/40 dark:via-slate-900 dark:to-slate-900">
+      {/* Hero Section — Perfectly balanced with wide, expansive showcase matching user's red box */}
+      <section className="relative min-h-[calc(100vh-80px)] flex items-center pt-6 pb-14 sm:pt-8 sm:pb-16 lg:pt-8 lg:pb-16 overflow-hidden bg-gradient-to-b from-purple-50/70 via-slate-50 to-slate-50 dark:from-slate-800/40 dark:via-slate-900 dark:to-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-            {/* Left Content Column — Bold, Big, perfectly balanced vertically */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center">
+            {/* Left Content Column */}
             <div className="lg:col-span-7 flex flex-col items-start z-10">
               <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 text-xs font-semibold text-emerald-800 dark:text-emerald-300 mb-3 sm:mb-4">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -104,29 +104,29 @@ export const HomePage = () => {
               </div>
             </div>
 
-            {/* Right Layered Visual Hero Showcase — Constrained so it NEVER hits bottom border */}
-            <div className="lg:col-span-5 relative flex items-center justify-center">
-              <div className="relative mx-auto w-full max-w-xs sm:max-w-sm lg:max-w-[400px] xl:max-w-[440px]">
-                {/* Main Executive Portrait Card — Capped so it stays well above bottom */}
-                <div className="relative rounded-3xl overflow-hidden aspect-[4/5] max-h-[50vh] sm:max-h-[52vh] xl:max-h-[55vh] w-full shadow-2xl border-4 border-white dark:border-slate-800 bg-slate-100">
+            {/* Right Showcase — Expanded Wide & Commanding (Exactly fills user's red box) */}
+            <div className="lg:col-span-5 relative flex items-center justify-center lg:justify-end">
+              <div className="relative w-full max-w-md sm:max-w-lg lg:max-w-[480px] xl:max-w-[530px]">
+                {/* Main Executive Portrait Card — Wide, balanced, proportional aspect ratio */}
+                <div className="relative rounded-3xl overflow-hidden aspect-[16/13] sm:aspect-[4/3] lg:aspect-[16/13] w-full shadow-2xl border-4 border-white dark:border-slate-800 bg-slate-100">
                   <img
                     src={profile.avatar}
                     alt={profile.name}
                     className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/10 to-transparent" />
-                  <div className="absolute bottom-5 left-5 right-5 text-white">
+                  <div className="absolute bottom-5 left-5 right-5 text-white z-10">
                     <span className="text-[10px] uppercase tracking-wider font-bold text-purple-300 block mb-0.5">
                       Operations Partner
                     </span>
-                    <h3 className="text-lg sm:text-xl font-bold">{profile.name}</h3>
-                    <p className="text-[11px] text-slate-300 mt-0.5">Fluent in Asana, Notion, ClickUp & Zendesk</p>
+                    <h3 className="text-xl sm:text-2xl font-bold">{profile.name}</h3>
+                    <p className="text-xs text-slate-300 mt-0.5">Fluent in Asana, Notion, ClickUp & Zendesk</p>
                   </div>
                 </div>
 
                 {/* Floating Widget 1: Live Notification Pill */}
-                <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-5 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-2.5 max-w-[220px]">
-                  <div className="w-7 h-7 rounded-xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                <div className="absolute -top-3.5 -left-3 sm:-top-4 sm:-left-5 bg-white dark:bg-slate-800 p-3 sm:p-3.5 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3 max-w-[240px] z-20">
+                  <div className="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
                     <Check className="w-4 h-4" />
                   </div>
                   <div className="text-[11px] leading-tight">
@@ -135,13 +135,13 @@ export const HomePage = () => {
                   </div>
                 </div>
 
-                {/* Floating Widget 2: Hours Saved Metric — Elevated with positive bottom offset */}
-                <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-2.5">
-                  <div className="w-9 h-9 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-base shrink-0">
+                {/* Floating Widget 2: Hours Saved Metric (Within safe bounds) */}
+                <div className="absolute bottom-4 right-4 sm:bottom-5 sm:right-5 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3 z-20">
+                  <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-lg shrink-0">
                     ⚡
                   </div>
                   <div>
-                    <span className="block text-sm font-extrabold text-slate-900 dark:text-white">3,800+ hrs</span>
+                    <span className="block text-sm sm:text-base font-extrabold text-slate-900 dark:text-white">3,800+ hrs</span>
                     <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium">Reclaimed for CEOs</span>
                   </div>
                 </div>
