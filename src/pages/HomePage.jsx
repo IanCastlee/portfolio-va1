@@ -48,31 +48,31 @@ export const HomePage = () => {
 
   return (
     <div>
-      {/* Hero Section — Balanced, Uncompressed, Screen-Filling Presence */}
-      <section className="relative min-h-[calc(100vh-80px)] flex items-center py-12 lg:py-16 overflow-hidden bg-gradient-to-b from-purple-50/70 via-slate-50 to-slate-50 dark:from-slate-800/40 dark:via-slate-900 dark:to-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+      {/* Hero Section — Perfectly balanced with generous bottom clearance */}
+      <section className="relative min-h-[calc(100vh-80px)] flex items-center pt-8 pb-16 sm:pt-10 sm:pb-20 lg:pt-10 lg:pb-24 overflow-hidden bg-gradient-to-b from-purple-50/70 via-slate-50 to-slate-50 dark:from-slate-800/40 dark:via-slate-900 dark:to-slate-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full my-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left Content Column */}
             <div className="lg:col-span-7 flex flex-col items-start z-10">
-              <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 text-xs font-semibold text-emerald-800 dark:text-emerald-300 mb-5">
+              <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 text-xs font-semibold text-emerald-800 dark:text-emerald-300 mb-4">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                 <span>{profile.availabilityStatus}</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-5">
+              <h1 className="text-3xl sm:text-5xl lg:text-4xl xl:text-5xl 2xl:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.14] mb-4">
                 Reclaim <span className="text-purple-600 dark:text-purple-400 underline decoration-purple-300 dark:decoration-purple-500 underline-offset-8">20+ Hours</span> of Focus Every Single Week.
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl mb-7 font-normal">
+              <p className="text-sm sm:text-base lg:text-base text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl mb-6 font-normal">
                 I partner with high-growth CEOs, founders, and boutique agencies as a high-level <strong>Executive Virtual Assistant & Operations Partner</strong>. Let me handle calendar choreography, inbox zero, customer success, and team task management.
               </p>
 
               {/* CTAs */}
-              <div className="flex flex-wrap items-center gap-4 mb-8">
+              <div className="flex flex-wrap items-center gap-3.5 mb-6">
                 <Button
                   to="/contact"
                   variant="primary"
-                  size="lg"
+                  size="md"
                   icon={Calendar}
                 >
                   Book Discovery Call
@@ -80,7 +80,7 @@ export const HomePage = () => {
                 <Button
                   to="/services"
                   variant="outline"
-                  size="lg"
+                  size="md"
                   icon={ArrowRight}
                 >
                   Explore Services
@@ -88,61 +88,61 @@ export const HomePage = () => {
               </div>
 
               {/* Trust Badges */}
-              <div className="pt-6 border-t border-slate-200 dark:border-slate-800 grid grid-cols-3 gap-6 text-xs sm:text-sm font-medium text-slate-600 dark:text-slate-400 w-full max-w-xl">
-                <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-purple-600 dark:text-purple-400 shrink-0" />
+              <div className="pt-5 border-t border-slate-200 dark:border-slate-800 grid grid-cols-3 gap-4 text-xs font-medium text-slate-600 dark:text-slate-400 w-full max-w-lg">
+                <div className="flex items-center gap-1.5">
+                  <ShieldCheck className="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0" />
                   <span>Strict NDA Signed</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Clock className="w-5 h-5 text-purple-600 dark:text-purple-400 shrink-0" />
+                <div className="flex items-center gap-1.5">
+                  <Clock className="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0" />
                   <span>EST / PST / AEST</span>
                 </div>
-                <div className="flex items-center gap-2">
-                  <Award className="w-5 h-5 text-purple-600 dark:text-purple-400 shrink-0" />
+                <div className="flex items-center gap-1.5">
+                  <Award className="w-4 h-4 text-purple-600 dark:text-purple-400 shrink-0" />
                   <span>6+ Yrs Experience</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Layered Visual Hero Showcase */}
+            {/* Right Layered Visual Hero Showcase — Constrained to avoid bottom clipping */}
             <div className="lg:col-span-5 relative flex items-center justify-center">
-              <div className="relative mx-auto w-full max-w-sm sm:max-w-md lg:max-w-[440px] xl:max-w-[480px]">
+              <div className="relative mx-auto w-full max-w-xs sm:max-w-sm lg:max-w-[390px] xl:max-w-[430px]">
                 {/* Main Executive Portrait Card */}
-                <div className="relative rounded-3xl overflow-hidden aspect-[4/5] w-full shadow-2xl border-4 border-white dark:border-slate-800 bg-slate-100">
+                <div className="relative rounded-3xl overflow-hidden aspect-[4/5] max-h-[50vh] sm:max-h-[54vh] w-full shadow-2xl border-4 border-white dark:border-slate-800 bg-slate-100">
                   <img
                     src={profile.avatar}
                     alt={profile.name}
                     className="w-full h-full object-cover object-top"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/10 to-transparent" />
-                  <div className="absolute bottom-6 left-6 right-6 text-white">
-                    <span className="text-xs uppercase tracking-wider font-bold text-purple-300 block mb-1">
+                  <div className="absolute bottom-5 left-5 right-5 text-white">
+                    <span className="text-[10px] uppercase tracking-wider font-bold text-purple-300 block mb-0.5">
                       Operations Partner
                     </span>
-                    <h3 className="text-xl sm:text-2xl font-bold">{profile.name}</h3>
-                    <p className="text-xs text-slate-300 mt-0.5">Fluent in Asana, Notion, ClickUp & Zendesk</p>
+                    <h3 className="text-lg sm:text-xl font-bold">{profile.name}</h3>
+                    <p className="text-[11px] text-slate-300 mt-0.5">Fluent in Asana, Notion, ClickUp & Zendesk</p>
                   </div>
                 </div>
 
                 {/* Floating Widget 1: Live Notification Pill */}
-                <div className="absolute -top-4 -left-4 sm:-top-5 sm:-left-6 bg-white dark:bg-slate-800 p-3.5 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3 max-w-[240px]">
-                  <div className="w-8 h-8 rounded-xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
-                    <Check className="w-5 h-5" />
+                <div className="absolute -top-3 -left-3 sm:-top-4 sm:-left-5 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-2.5 max-w-[220px]">
+                  <div className="w-7 h-7 rounded-xl bg-emerald-100 dark:bg-emerald-950/80 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0">
+                    <Check className="w-4 h-4" />
                   </div>
-                  <div className="text-xs leading-tight">
+                  <div className="text-[11px] leading-tight">
                     <span className="font-bold text-slate-800 dark:text-white block">Inbox Zero Achieved</span>
                     <span className="text-slate-500 dark:text-slate-400">0 unread emails today</span>
                   </div>
                 </div>
 
-                {/* Floating Widget 2: Hours Saved Metric */}
-                <div className="absolute -bottom-4 -right-4 sm:-bottom-5 sm:-right-6 bg-white dark:bg-slate-800 p-3.5 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-lg shrink-0">
+                {/* Floating Widget 2: Hours Saved Metric (Placed safely within bottom boundary) */}
+                <div className="absolute bottom-2 -right-2 sm:bottom-3 sm:-right-4 bg-white dark:bg-slate-800 p-3 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-2.5">
+                  <div className="w-9 h-9 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-base shrink-0">
                     ⚡
                   </div>
                   <div>
-                    <span className="block text-base font-extrabold text-slate-900 dark:text-white">3,800+ hrs</span>
-                    <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">Reclaimed for CEOs</span>
+                    <span className="block text-sm font-extrabold text-slate-900 dark:text-white">3,800+ hrs</span>
+                    <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium">Reclaimed for CEOs</span>
                   </div>
                 </div>
               </div>
