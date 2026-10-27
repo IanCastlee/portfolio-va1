@@ -4,7 +4,6 @@ import { ArrowRight, CheckCircle2, Calendar, ShieldCheck, Zap, Clock, Users, Awa
 import { Button } from '../components/atoms/Button';
 import { SectionEyebrow, Heading, Paragraph } from '../components/atoms/Typography';
 import { ToolLogo } from '../components/atoms/ToolLogo';
-import { RevealOnScroll } from '../components/atoms/RevealOnScroll';
 import { ServiceSummaryCard } from '../components/molecules/ServiceSummaryCard';
 import { CaseStudyCard } from '../components/molecules/CaseStudyCard';
 import { TestimonialCard } from '../components/molecules/TestimonialCard';
@@ -51,14 +50,14 @@ export const HomePage = () => {
     <div>
       {/* Clean, Polished, High-Impact Hero Section */}
       <section className="relative min-h-[calc(100vh-80px)] flex items-center py-12 lg:py-16 overflow-hidden bg-gradient-to-b from-purple-50/70 via-slate-50 to-slate-50 dark:from-slate-800/40 dark:via-slate-900 dark:to-slate-900">
-        {/* Ambient Pulsing Glow in Background */}
-        <div className="absolute top-1/3 right-1/4 w-[450px] h-[450px] bg-purple-500/10 dark:bg-purple-600/10 rounded-full blur-3xl pointer-events-none animate-pulse-subtle" />
+        {/* Ambient Glow in Background */}
+        <div className="absolute top-1/3 right-1/4 w-[450px] h-[450px] bg-purple-500/10 dark:bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Content Column */}
-            <div className="lg:col-span-7 flex flex-col items-start z-10 animate-fade-in-up">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 text-xs font-semibold text-emerald-800 dark:text-emerald-300 mb-5 animate-fade-in-down">
+            <div className="lg:col-span-7 flex flex-col items-start z-10">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 text-xs font-semibold text-emerald-800 dark:text-emerald-300 mb-5">
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                 <span>{profile.availabilityStatus}</span>
               </div>
@@ -111,17 +110,17 @@ export const HomePage = () => {
             </div>
 
             {/* Right Showcase — Clean, Uncluttered Executive Portrait with Floating Badges */}
-            <div className="lg:col-span-5 relative flex items-center justify-center lg:justify-end animate-fade-in-up" style={{ animationDelay: '150ms' }}>
+            <div className="lg:col-span-5 relative flex items-center justify-center lg:justify-end">
               <div className="relative w-full max-w-sm sm:max-w-md lg:max-w-[420px] xl:max-w-[460px]">
                 {/* Background Ambient Glow */}
                 <div className="absolute -inset-4 bg-gradient-to-tr from-purple-500/20 via-indigo-500/10 to-transparent rounded-3xl blur-2xl -z-10" />
 
-                {/* Main Executive Portrait Card — Framed naturally without awkward cropping */}
+                {/* Main Executive Portrait Card */}
                 <div className="relative rounded-3xl overflow-hidden aspect-[4/5] w-full shadow-2xl border-4 border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-800">
                   <img
                     src={profile.avatar}
                     alt={profile.name}
-                    className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105"
                   />
                   {/* Subtle Clean Bottom Gradient with Tag */}
                   <div className="absolute inset-x-0 bottom-0 p-5 bg-gradient-to-t from-slate-950/80 via-slate-950/30 to-transparent text-white">
@@ -160,212 +159,189 @@ export const HomePage = () => {
         </div>
       </section>
 
-      {/* Social Proof Brand Logobar — Animated On Scroll */}
+      {/* Social Proof Brand Logobar */}
       <section className="py-8 bg-white dark:bg-slate-800/80 border-y border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <RevealOnScroll direction="up">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-              <span className="text-xs uppercase font-bold tracking-wider text-slate-400 dark:text-slate-500 whitespace-nowrap">
-                Trusted by leaders backed by:
-              </span>
-              <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 text-slate-400 dark:text-slate-500 font-bold text-sm tracking-wider">
-                <span className="hover:text-purple-600 transition-colors">Y COMBINATOR ALUMNI</span>
-                <span className="hover:text-purple-600 transition-colors">TECHSTARS</span>
-                <span className="hover:text-purple-600 transition-colors">SEQUOIA SCOUTS</span>
-                <span className="hover:text-purple-600 transition-colors">MAVEN INSTRUCTORS</span>
-              </div>
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+            <span className="text-xs uppercase font-bold tracking-wider text-slate-400 dark:text-slate-500 whitespace-nowrap">
+              Trusted by leaders backed by:
+            </span>
+            <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 text-slate-400 dark:text-slate-500 font-bold text-sm tracking-wider">
+              <span className="hover:text-purple-600 transition-colors">Y COMBINATOR ALUMNI</span>
+              <span className="hover:text-purple-600 transition-colors">TECHSTARS</span>
+              <span className="hover:text-purple-600 transition-colors">SEQUOIA SCOUTS</span>
+              <span className="hover:text-purple-600 transition-colors">MAVEN INSTRUCTORS</span>
             </div>
-          </RevealOnScroll>
+          </div>
         </div>
       </section>
 
-      {/* Visual Workspace & Operations Gallery Section — Animated On Scroll */}
+      {/* Visual Workspace & Operations Gallery Section */}
       <section className="py-20 bg-slate-50 dark:bg-slate-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <RevealOnScroll direction="up">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-              <div>
-                <SectionEyebrow>Inside The Operations</SectionEyebrow>
-                <Heading level={2}>A Look Into Frictionless Daily Management</Heading>
-                <Paragraph size="md" muted className="mt-2 max-w-xl">
-                  See how precision systems transform messy, scattered tasks into streamlined daily executive momentum.
-                </Paragraph>
-              </div>
-              <Button to="/services" variant="outline" size="sm" icon={ArrowRight}>
-                See All Capabilities
-              </Button>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <SectionEyebrow>Inside The Operations</SectionEyebrow>
+              <Heading level={2}>A Look Into Frictionless Daily Management</Heading>
+              <Paragraph size="md" muted className="mt-2 max-w-xl">
+                See how precision systems transform messy, scattered tasks into streamlined daily executive momentum.
+              </Paragraph>
             </div>
-          </RevealOnScroll>
+            <Button to="/services" variant="outline" size="sm" icon={ArrowRight}>
+              See All Capabilities
+            </Button>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {operationalGallery.map((item, idx) => (
-              <RevealOnScroll key={idx} delay={idx * 120} direction="up">
-                <div className="group rounded-2xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-xl hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 flex flex-col h-full">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-slate-200 dark:bg-slate-700">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                    <div className="absolute top-3 left-3">
-                      <span className="text-[10px] font-bold uppercase tracking-wider bg-white/90 dark:bg-slate-900/90 text-purple-700 dark:text-purple-300 px-2.5 py-1 rounded-full backdrop-blur-sm border border-slate-200/50 dark:border-slate-700">
-                        {item.category}
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-5 flex flex-col justify-between flex-grow">
-                    <div>
-                      <h3 className="text-base font-bold text-slate-900 dark:text-white mb-1.5 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
-                        {item.title}
-                      </h3>
-                      <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                        {item.description}
-                      </p>
-                    </div>
+              <div key={idx} className="group rounded-2xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-xl hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 flex flex-col h-full">
+                <div className="relative aspect-[4/3] overflow-hidden bg-slate-200 dark:bg-slate-700">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute top-3 left-3">
+                    <span className="text-[10px] font-bold uppercase tracking-wider bg-white/90 dark:bg-slate-900/90 text-purple-700 dark:text-purple-300 px-2.5 py-1 rounded-full backdrop-blur-sm border border-slate-200/50 dark:border-slate-700">
+                      {item.category}
+                    </span>
                   </div>
                 </div>
-              </RevealOnScroll>
+                <div className="p-5 flex flex-col justify-between flex-grow">
+                  <div>
+                    <h3 className="text-base font-bold text-slate-900 dark:text-white mb-1.5 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Software & Tech Stack Proficiency with Real Brand Logos — Staggered Reveal */}
+      {/* Software & Tech Stack Proficiency with Real Brand Logos */}
       <section className="py-20 bg-white dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
-          <RevealOnScroll direction="up">
-            <SectionEyebrow className="justify-center">Tech Stack Mastery</SectionEyebrow>
-            <Heading level={2}>Seamless Integration With Your Existing Tools</Heading>
-            <Paragraph size="md" muted className="mt-3 max-w-xl mx-auto">
-              Zero ramp-up time required. I am already fluent in the core platforms modern startups and remote teams depend on.
-            </Paragraph>
-          </RevealOnScroll>
+          <SectionEyebrow className="justify-center">Tech Stack Mastery</SectionEyebrow>
+          <Heading level={2}>Seamless Integration With Your Existing Tools</Heading>
+          <Paragraph size="md" muted className="mt-3 max-w-xl mx-auto">
+            Zero ramp-up time required. I am already fluent in the core platforms modern startups and remote teams depend on.
+          </Paragraph>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
             {tools.map((t, idx) => (
-              <RevealOnScroll key={idx} delay={(idx % 6) * 80} direction="up">
-                <div className="group p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 flex flex-col items-center text-center shadow-sm hover:border-purple-500 hover:shadow-lg transition-all duration-200 h-full justify-between">
-                  {/* Real Brand Logo */}
-                  <div className="mb-3 transform group-hover:scale-110 transition-transform duration-200 flex items-center justify-center">
-                    <ToolLogo name={t.name} className="w-10 h-10" />
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-0.5">{t.name}</h4>
-                    <span className="text-[11px] text-slate-500 dark:text-slate-400 mb-3 block">{t.category}</span>
-                  </div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700 dark:text-purple-300 bg-purple-100 dark:bg-purple-950/80 px-2.5 py-1 rounded-full border border-purple-200 dark:border-purple-800/60">
-                    {t.proficiency}
-                  </span>
+              <div key={idx} className="group p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 flex flex-col items-center text-center shadow-sm hover:border-purple-500 hover:shadow-lg transition-all duration-200 h-full justify-between">
+                {/* Real Brand Logo */}
+                <div className="mb-3 transform group-hover:scale-110 transition-transform duration-200 flex items-center justify-center">
+                  <ToolLogo name={t.name} className="w-10 h-10" />
                 </div>
-              </RevealOnScroll>
+                <div>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-0.5">{t.name}</h4>
+                  <span className="text-[11px] text-slate-500 dark:text-slate-400 mb-3 block">{t.category}</span>
+                </div>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700 dark:text-purple-300 bg-purple-100 dark:bg-purple-950/80 px-2.5 py-1 rounded-full border border-purple-200 dark:border-purple-800/60">
+                  {t.proficiency}
+                </span>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Services Preview — Animated On Scroll */}
+      {/* Featured Services Preview */}
       <section className="py-20 bg-slate-100/60 dark:bg-slate-800/30 border-y border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <RevealOnScroll direction="up">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-              <div>
-                <SectionEyebrow>Core Capabilities</SectionEyebrow>
-                <Heading level={2}>Specialized Operations Support</Heading>
-                <Paragraph size="md" muted className="mt-2 max-w-lg">
-                  Comprehensive executive support designed to relieve cognitive overload and streamline team execution.
-                </Paragraph>
-              </div>
-              <Button to="/services" variant="outline" size="md" icon={ArrowRight}>
-                View All 6 Services & Deliverables
-              </Button>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <SectionEyebrow>Core Capabilities</SectionEyebrow>
+              <Heading level={2}>Specialized Operations Support</Heading>
+              <Paragraph size="md" muted className="mt-2 max-w-lg">
+                Comprehensive executive support designed to relieve cognitive overload and streamline team execution.
+              </Paragraph>
             </div>
-          </RevealOnScroll>
+            <Button to="/services" variant="outline" size="md" icon={ArrowRight}>
+              View All 6 Services & Deliverables
+            </Button>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {services.slice(0, 3).map((service, idx) => (
-              <RevealOnScroll key={service.id} delay={idx * 150} direction="up">
-                <ServiceSummaryCard service={service} />
-              </RevealOnScroll>
+            {services.slice(0, 3).map((service) => (
+              <ServiceSummaryCard key={service.id} service={service} />
             ))}
           </div>
         </div>
       </section>
 
-      {/* 4-Step Collaborative Workflow — Animated Steps */}
+      {/* 4-Step Collaborative Workflow */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-2xl mb-16">
-          <RevealOnScroll direction="up">
-            <SectionEyebrow className="justify-center">Simple Onboarding</SectionEyebrow>
-            <Heading level={2}>How We Work Together</Heading>
-            <Paragraph size="md" muted className="mt-3">
-              Getting high-level administrative support shouldn't create more work for you. Here is our effortless 4-step framework:
-            </Paragraph>
-          </RevealOnScroll>
+          <SectionEyebrow className="justify-center">Simple Onboarding</SectionEyebrow>
+          <Heading level={2}>How We Work Together</Heading>
+          <Paragraph size="md" muted className="mt-3">
+            Getting high-level administrative support shouldn't create more work for you. Here is our effortless 4-step framework:
+          </Paragraph>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map((st, idx) => (
-              <RevealOnScroll key={idx} delay={idx * 120} direction="up">
-                <div className="p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm relative overflow-hidden h-full hover:border-purple-400 transition-colors">
-                  <span className="text-4xl font-extrabold text-purple-200 dark:text-purple-900/40 block mb-4">
-                    {st.number}
-                  </span>
-                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{st.title}</h3>
-                  <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-normal">{st.desc}</p>
-                </div>
-              </RevealOnScroll>
+              <div
+                key={idx}
+                className="p-8 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm relative overflow-hidden h-full hover:border-purple-400 transition-colors"
+              >
+                <span className="text-4xl font-extrabold text-purple-200 dark:text-purple-900/40 block mb-4">
+                  {st.number}
+                </span>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{st.title}</h3>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-normal">{st.desc}</p>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Featured Case Study Highlight — Animated Card */}
+      {/* Featured Case Study Highlight */}
       <section className="py-20 bg-slate-100/60 dark:bg-slate-800/30 border-y border-slate-200 dark:border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <RevealOnScroll direction="up">
-            <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-              <div>
-                <SectionEyebrow>Proven Client Wins</SectionEyebrow>
-                <Heading level={2}>Real Results for Real Founders</Heading>
-                <Paragraph size="md" muted className="mt-2 max-w-lg">
-                  Explore how operational delegation translated directly into reclaimed time, higher revenue, and zero missed deadlines.
-                </Paragraph>
-              </div>
-              <Button to="/case-studies" variant="outline" size="md" icon={ArrowRight}>
-                Read All Case Studies
-              </Button>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+            <div>
+              <SectionEyebrow>Proven Client Wins</SectionEyebrow>
+              <Heading level={2}>Real Results for Real Founders</Heading>
+              <Paragraph size="md" muted className="mt-2 max-w-lg">
+                Explore how operational delegation translated directly into reclaimed time, higher revenue, and zero missed deadlines.
+              </Paragraph>
             </div>
-          </RevealOnScroll>
+            <Button to="/case-studies" variant="outline" size="md" icon={ArrowRight}>
+              Read All Case Studies
+            </Button>
+          </div>
 
           <div className="max-w-4xl mx-auto">
-            <RevealOnScroll delay={150} direction="up">
-              <CaseStudyCard caseStudy={caseStudies[0]} />
-            </RevealOnScroll>
+            <CaseStudyCard caseStudy={caseStudies[0]} />
           </div>
         </div>
       </section>
 
-      {/* Client Endorsements / Testimonials — Staggered Card Reveals */}
+      {/* Client Endorsements / Testimonials */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-2xl mb-16">
-          <RevealOnScroll direction="up">
-            <SectionEyebrow className="justify-center">Client Endorsements</SectionEyebrow>
-            <Heading level={2}>Trusted by Founders & Executives Worldwide</Heading>
-            <Paragraph size="md" muted className="mt-3">
-              Read what entrepreneurs from New York to Melbourne have to say about partnering with Aria Vance Virtual Co.
-            </Paragraph>
-          </RevealOnScroll>
+          <SectionEyebrow className="justify-center">Client Endorsements</SectionEyebrow>
+          <Heading level={2}>Trusted by Founders & Executives Worldwide</Heading>
+          <Paragraph size="md" muted className="mt-3">
+            Read what entrepreneurs from New York to Melbourne have to say about partnering with Aria Vance Virtual Co.
+          </Paragraph>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, idx) => (
-              <RevealOnScroll key={idx} delay={idx * 150} direction="up">
-                <TestimonialCard testimonial={t} />
-              </RevealOnScroll>
+              <TestimonialCard key={idx} testimonial={t} />
             ))}
           </div>
         </div>
