@@ -53,7 +53,7 @@ export const HomePage = () => {
         {/* Ambient Glow in Background */}
         <div className="absolute top-1/3 right-1/4 w-[450px] h-[450px] bg-purple-500/10 dark:bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-8 xl:px-9 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             {/* Left Content Column */}
             <div className="lg:col-span-7 flex flex-col items-start z-10">
@@ -144,7 +144,7 @@ export const HomePage = () => {
                 </div>
 
                 {/* Floating Widget 2: Bottom Right */}
-                <div className="absolute -bottom-4 -right-4 sm:-bottom-5 sm:-right-6 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3 z-20 animate-float-reverse">
+                <div className="absolute -bottom-4 right-0 sm:-bottom-5 sm:right-1 bg-white/95 dark:bg-slate-800/95 backdrop-blur-md p-3 sm:p-3.5 rounded-2xl shadow-xl border border-slate-100 dark:border-slate-700 flex items-center gap-3 z-20 animate-float-reverse">
                   <div className="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-purple-600 dark:text-purple-400 flex items-center justify-center font-bold text-lg shrink-0">
                     ⚡
                   </div>
@@ -161,7 +161,7 @@ export const HomePage = () => {
 
       {/* Social Proof Brand Logobar */}
       <section className="py-8 bg-white dark:bg-slate-800/80 border-y border-slate-200 dark:border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-8 xl:px-9">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
             <span className="text-xs uppercase font-bold tracking-wider text-slate-400 dark:text-slate-500 whitespace-nowrap">
               Trusted by leaders backed by:
@@ -178,7 +178,7 @@ export const HomePage = () => {
 
       {/* Visual Workspace & Operations Gallery Section */}
       <section className="py-20 bg-slate-50 dark:bg-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-8 xl:px-9">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
               <SectionEyebrow>Inside The Operations</SectionEyebrow>
@@ -225,7 +225,7 @@ export const HomePage = () => {
 
       {/* Software & Tech Stack Proficiency with Real Brand Logos */}
       <section className="py-20 bg-white dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-12">
+        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-8 xl:px-9 text-center mb-12">
           <SectionEyebrow className="justify-center">Tech Stack Mastery</SectionEyebrow>
           <Heading level={2}>Seamless Integration With Your Existing Tools</Heading>
           <Paragraph size="md" muted className="mt-3 max-w-xl mx-auto">
@@ -233,7 +233,7 @@ export const HomePage = () => {
           </Paragraph>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-8 xl:px-9">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
             {tools.map((t, idx) => (
               <div key={idx} className="group p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 flex flex-col items-center text-center shadow-sm hover:border-purple-500 hover:shadow-lg transition-all duration-200 h-full justify-between">
@@ -256,7 +256,7 @@ export const HomePage = () => {
 
       {/* Featured Services Preview */}
       <section className="py-20 bg-slate-100/60 dark:bg-slate-800/30 border-y border-slate-200 dark:border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-8 xl:px-9">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
               <SectionEyebrow>Core Capabilities</SectionEyebrow>
@@ -280,7 +280,7 @@ export const HomePage = () => {
 
       {/* 4-Step Collaborative Workflow */}
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-2xl mb-16">
+        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-8 xl:px-9 text-center max-w-2xl mb-16">
           <SectionEyebrow className="justify-center">Simple Onboarding</SectionEyebrow>
           <Heading level={2}>How We Work Together</Heading>
           <Paragraph size="md" muted className="mt-3">
@@ -288,7 +288,7 @@ export const HomePage = () => {
           </Paragraph>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-8 xl:px-9">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {steps.map((st, idx) => (
               <div
@@ -308,7 +308,7 @@ export const HomePage = () => {
 
       {/* Featured Case Study Highlight */}
       <section className="py-20 bg-slate-100/60 dark:bg-slate-800/30 border-y border-slate-200 dark:border-slate-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-8 xl:px-9">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
               <SectionEyebrow>Proven Client Wins</SectionEyebrow>
@@ -330,7 +330,7 @@ export const HomePage = () => {
 
       {/* Client Endorsements / Testimonials */}
       <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-2xl mb-16">
+        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-8 xl:px-9 text-center max-w-2xl mb-16">
           <SectionEyebrow className="justify-center">Client Endorsements</SectionEyebrow>
           <Heading level={2}>Trusted by Founders & Executives Worldwide</Heading>
           <Paragraph size="md" muted className="mt-3">
@@ -338,7 +338,7 @@ export const HomePage = () => {
           </Paragraph>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-8 xl:px-9">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, idx) => (
               <TestimonialCard key={idx} testimonial={t} />
