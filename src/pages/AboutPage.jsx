@@ -42,7 +42,7 @@ export const AboutPage = () => {
 
       {/* Main Bio Section */}
       <section className="py-20">
-        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-8 xl:px-9">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Image Column */}
             <div className="lg:col-span-5">
@@ -104,7 +104,7 @@ export const AboutPage = () => {
 
       {/* Core Values Section */}
       <section className="py-20 bg-slate-100/60 dark:bg-slate-800/30 border-y border-slate-200 dark:border-slate-800">
-        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-8 xl:px-9 text-center max-w-2xl mb-16">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 text-center max-w-2xl mb-16">
           <SectionEyebrow className="justify-center">Guiding Principles</SectionEyebrow>
           <Heading level={2}>How I Protect Your Time & Peace of Mind</Heading>
           <Paragraph size="md" muted className="mt-3">
@@ -112,7 +112,7 @@ export const AboutPage = () => {
           </Paragraph>
         </div>
 
-        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-8 xl:px-9">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((val, idx) => {
               const IconComp = val.icon;
@@ -135,7 +135,7 @@ export const AboutPage = () => {
 
       {/* Software Proficiency Grid */}
       <section className="py-20">
-        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-8 xl:px-9 text-center max-w-2xl mb-12">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 text-center max-w-2xl mb-12">
           <SectionEyebrow className="justify-center">Platforms & Mastery</SectionEyebrow>
           <Heading level={2}>Tool Stack & Workflow Automation</Heading>
           <Paragraph size="md" muted className="mt-2">

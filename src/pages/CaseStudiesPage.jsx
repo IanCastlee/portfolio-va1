@@ -26,7 +26,7 @@ export const CaseStudiesPage = () => {
 
       {/* Summary Metrics Bar */}
       <section className="py-16 bg-purple-50 dark:bg-purple-950/30 border-t border-purple-200 dark:border-purple-900/40">
-        <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-8 xl:px-9 text-center max-w-2xl mb-10">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 text-center max-w-2xl mb-10">
           <SectionEyebrow className="justify-center">Aggregate Impact</SectionEyebrow>
           <Heading level={2}>The Numbers Behind The Partnerships</Heading>
         </div>

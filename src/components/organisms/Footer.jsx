@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin, Linkedin, Twitter, ArrowUpRight } from 'lucide-rea
 export const Footer = ({ profile }) => {
   return (
     <footer className="bg-slate-900 text-slate-300 border-t border-slate-800 transition-colors">
-      <div className="max-w-[1680px] mx-auto px-6 sm:px-8 lg:px-8 xl:px-9 py-16">
+      <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 py-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
