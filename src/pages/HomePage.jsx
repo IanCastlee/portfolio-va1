@@ -1,49 +1,91 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, Calendar, ShieldCheck, Zap, Clock, Users, Award, Star, Check, Mail, Bell, Sparkles } from 'lucide-react';
-import { Button } from '../components/atoms/Button';
-import { SectionEyebrow, Heading, Paragraph } from '../components/atoms/Typography';
-import { ToolLogo } from '../components/atoms/ToolLogo';
-import { ServiceSummaryCard } from '../components/molecules/ServiceSummaryCard';
-import { CaseStudyCard } from '../components/molecules/CaseStudyCard';
-import { TestimonialCard } from '../components/molecules/TestimonialCard';
-import { vaData } from '../data/vaData';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Calendar,
+  ShieldCheck,
+  Zap,
+  Clock,
+  Users,
+  Award,
+  Star,
+  Check,
+  Mail,
+  Bell,
+  Sparkles,
+} from "lucide-react";
+import { Button } from "../components/atoms/Button";
+import {
+  SectionEyebrow,
+  Heading,
+  Paragraph,
+} from "../components/atoms/Typography";
+import { ToolLogo } from "../components/atoms/ToolLogo";
+import { ServiceSummaryCard } from "../components/molecules/ServiceSummaryCard";
+import { CaseStudyCard } from "../components/molecules/CaseStudyCard";
+import { TestimonialCard } from "../components/molecules/TestimonialCard";
+import { vaData } from "../data/vaData";
 
 export const HomePage = () => {
   const { profile, stats, services, caseStudies, testimonials, tools } = vaData;
 
   const steps = [
-    { number: "01", title: "Discovery Call", desc: "A 30-min strategy session to map your daily bottlenecks, preferred tools, and priorities." },
-    { number: "02", title: "NDA & Fast Setup", desc: "Mutual NDA signed and encrypted credential handoff via 1Password within 48 hours." },
-    { number: "03", title: "Workflow Calibration", desc: "I organize your inbox, calendar, and task boards with standardized SOPs." },
-    { number: "04", title: "Effortless Execution", desc: "Continuous daily task execution, proactive problem-solving, and weekly time logs." }
+    {
+      number: "01",
+      title: "Discovery Call",
+      desc: "A 30-min strategy session to map your daily bottlenecks, preferred tools, and priorities.",
+    },
+    {
+      number: "02",
+      title: "NDA & Fast Setup",
+      desc: "Mutual NDA signed and encrypted credential handoff via 1Password within 48 hours.",
+    },
+    {
+      number: "03",
+      title: "Workflow Calibration",
+      desc: "I organize your inbox, calendar, and task boards with standardized SOPs.",
+    },
+    {
+      number: "04",
+      title: "Effortless Execution",
+      desc: "Continuous daily task execution, proactive problem-solving, and weekly time logs.",
+    },
   ];
 
   const operationalGallery = [
     {
       title: "Executive Calendar Mastery",
       category: "Calendar Choreography",
-      image: "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80",
-      description: "Color-coded priority buffers, timezone synchronization, and zero double-booked meetings."
+      image:
+        "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?auto=format&fit=crop&w=800&q=80",
+      description:
+        "Color-coded priority buffers, timezone synchronization, and zero double-booked meetings.",
     },
     {
       title: "Notion Systems & SOP Hubs",
       category: "Operations Architecture",
-      image: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80",
-      description: "Turning recurring manual tasks into step-by-step institutional guides with Loom walkthroughs."
+      image:
+        "https://images.unsplash.com/photo-1499750310107-5fef28a66643?auto=format&fit=crop&w=800&q=80",
+      description:
+        "Turning recurring manual tasks into step-by-step institutional guides with Loom walkthroughs.",
     },
     {
       title: "Zero-Inbox Triage System",
       category: "Inbox Zero Protocol",
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80",
-      description: "Automated filters, VIP labeling, and canned templates clearing out 150+ daily emails."
+      image:
+        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80",
+      description:
+        "Automated filters, VIP labeling, and canned templates clearing out 150+ daily emails.",
     },
     {
       title: "Global Client Coordination",
       category: "Worldwide Remote Sync",
-      image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
-      description: "Seamless team accountability across New York, London, Singapore, and Sydney timezones."
-    }
+      image:
+        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80",
+      description:
+        "Seamless team accountability across New York, London, Singapore, and Sydney timezones.",
+    },
   ];
 
   return (
@@ -63,11 +105,21 @@ export const HomePage = () => {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12] mb-5">
-                Reclaim <span className="text-purple-600 dark:text-purple-400 underline decoration-purple-300 dark:decoration-purple-500 underline-offset-8">20+ Hours</span> of Focus Every Single Week.
+                Reclaim{" "}
+                <span className="text-purple-600 dark:text-purple-400 underline decoration-purple-300 dark:decoration-purple-500 underline-offset-8">
+                  20+ Hours
+                </span>{" "}
+                of Focus Every Single Week.
               </h1>
 
               <p className="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-xl mb-7 font-normal">
-                I partner with high-growth CEOs, founders, and boutique agencies as a high-level <strong>Executive Virtual Assistant & Operations Partner</strong>. Let me handle calendar choreography, inbox zero, customer success, and team task management.
+                I partner with high-growth CEOs, founders, and boutique agencies
+                as a high-level{" "}
+                <strong>
+                  Executive Virtual Assistant & Operations Partner
+                </strong>
+                . Let me handle calendar choreography, inbox zero, customer
+                success, and team task management.
               </p>
 
               {/* CTAs */}
@@ -116,7 +168,7 @@ export const HomePage = () => {
                 <div className="absolute -inset-4 bg-gradient-to-tr from-purple-500/20 via-indigo-500/10 to-transparent rounded-3xl blur-2xl -z-10" />
 
                 {/* Main Executive Portrait Card */}
-                <div className="relative rounded-3xl overflow-hidden aspect-[4/5] w-full shadow-2xl border-4 border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-800">
+                <div className="relative rounded-3xl overflow-hidden aspect-[5/5] w-full shadow-2xl border-4 border-white dark:border-slate-800 bg-slate-100 dark:bg-slate-800">
                   <img
                     src={profile.avatar}
                     alt={profile.name}
@@ -128,7 +180,9 @@ export const HomePage = () => {
                       Operations Partner
                     </span>
                     <h3 className="text-xl font-bold">{profile.name}</h3>
-                    <p className="text-xs text-slate-300 font-normal">Fluent in Asana, Notion, ClickUp & Zendesk</p>
+                    <p className="text-xs text-slate-300 font-normal">
+                      Fluent in Asana, Notion, ClickUp & Zendesk
+                    </p>
                   </div>
                 </div>
 
@@ -138,8 +192,12 @@ export const HomePage = () => {
                     <Check className="w-4 h-4" />
                   </div>
                   <div className="text-xs leading-tight">
-                    <span className="font-bold text-slate-900 dark:text-white block">Inbox Zero Achieved</span>
-                    <span className="text-slate-500 dark:text-slate-400 text-[11px]">0 unread emails today</span>
+                    <span className="font-bold text-slate-900 dark:text-white block">
+                      Inbox Zero Achieved
+                    </span>
+                    <span className="text-slate-500 dark:text-slate-400 text-[11px]">
+                      0 unread emails today
+                    </span>
                   </div>
                 </div>
 
@@ -149,8 +207,12 @@ export const HomePage = () => {
                     ⚡
                   </div>
                   <div>
-                    <span className="block text-sm sm:text-base font-extrabold text-slate-900 dark:text-white">3,800+ hrs</span>
-                    <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">Reclaimed for CEOs</span>
+                    <span className="block text-sm sm:text-base font-extrabold text-slate-900 dark:text-white">
+                      3,800+ hrs
+                    </span>
+                    <span className="text-[11px] text-slate-500 dark:text-slate-400 font-medium">
+                      Reclaimed for CEOs
+                    </span>
                   </div>
                 </div>
               </div>
@@ -167,10 +229,18 @@ export const HomePage = () => {
               Trusted by leaders backed by:
             </span>
             <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 text-slate-400 dark:text-slate-500 font-bold text-sm tracking-wider">
-              <span className="hover:text-purple-600 transition-colors">Y COMBINATOR ALUMNI</span>
-              <span className="hover:text-purple-600 transition-colors">TECHSTARS</span>
-              <span className="hover:text-purple-600 transition-colors">SEQUOIA SCOUTS</span>
-              <span className="hover:text-purple-600 transition-colors">MAVEN INSTRUCTORS</span>
+              <span className="hover:text-purple-600 transition-colors">
+                Y COMBINATOR ALUMNI
+              </span>
+              <span className="hover:text-purple-600 transition-colors">
+                TECHSTARS
+              </span>
+              <span className="hover:text-purple-600 transition-colors">
+                SEQUOIA SCOUTS
+              </span>
+              <span className="hover:text-purple-600 transition-colors">
+                MAVEN INSTRUCTORS
+              </span>
             </div>
           </div>
         </div>
@@ -182,19 +252,30 @@ export const HomePage = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
             <div>
               <SectionEyebrow>Inside The Operations</SectionEyebrow>
-              <Heading level={2}>A Look Into Frictionless Daily Management</Heading>
+              <Heading level={2}>
+                A Look Into Frictionless Daily Management
+              </Heading>
               <Paragraph size="md" muted className="mt-2 max-w-xl">
-                See how precision systems transform messy, scattered tasks into streamlined daily executive momentum.
+                See how precision systems transform messy, scattered tasks into
+                streamlined daily executive momentum.
               </Paragraph>
             </div>
-            <Button to="/services" variant="outline" size="sm" icon={ArrowRight}>
+            <Button
+              to="/services"
+              variant="outline"
+              size="sm"
+              icon={ArrowRight}
+            >
               See All Capabilities
             </Button>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {operationalGallery.map((item, idx) => (
-              <div key={idx} className="group rounded-2xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-xl hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 flex flex-col h-full">
+              <div
+                key={idx}
+                className="group rounded-2xl overflow-hidden bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700/80 shadow-sm hover:shadow-xl hover:border-purple-300 dark:hover:border-purple-600 transition-all duration-300 flex flex-col h-full"
+              >
                 <div className="relative aspect-[4/3] overflow-hidden bg-slate-200 dark:bg-slate-700">
                   <img
                     src={item.image}
@@ -226,24 +307,36 @@ export const HomePage = () => {
       {/* Software & Tech Stack Proficiency with Real Brand Logos */}
       <section className="py-20 bg-white dark:bg-slate-800/50 border-t border-slate-200 dark:border-slate-800">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 text-center mb-12">
-          <SectionEyebrow className="justify-center">Tech Stack Mastery</SectionEyebrow>
-          <Heading level={2}>Seamless Integration With Your Existing Tools</Heading>
+          <SectionEyebrow className="justify-center">
+            Tech Stack Mastery
+          </SectionEyebrow>
+          <Heading level={2}>
+            Seamless Integration With Your Existing Tools
+          </Heading>
           <Paragraph size="md" muted className="mt-3 max-w-xl mx-auto">
-            Zero ramp-up time required. I am already fluent in the core platforms modern startups and remote teams depend on.
+            Zero ramp-up time required. I am already fluent in the core
+            platforms modern startups and remote teams depend on.
           </Paragraph>
         </div>
 
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16">
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
             {tools.map((t, idx) => (
-              <div key={idx} className="group p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 flex flex-col items-center text-center shadow-sm hover:border-purple-500 hover:shadow-lg transition-all duration-200 h-full justify-between">
+              <div
+                key={idx}
+                className="group p-5 rounded-2xl bg-slate-50 dark:bg-slate-800/90 border border-slate-200 dark:border-slate-700/80 flex flex-col items-center text-center shadow-sm hover:border-purple-500 hover:shadow-lg transition-all duration-200 h-full justify-between"
+              >
                 {/* Real Brand Logo */}
                 <div className="mb-3 transform group-hover:scale-110 transition-transform duration-200 flex items-center justify-center">
                   <ToolLogo name={t.name} className="w-10 h-10" />
                 </div>
                 <div>
-                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-0.5">{t.name}</h4>
-                  <span className="text-[11px] text-slate-500 dark:text-slate-400 mb-3 block">{t.category}</span>
+                  <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-0.5">
+                    {t.name}
+                  </h4>
+                  <span className="text-[11px] text-slate-500 dark:text-slate-400 mb-3 block">
+                    {t.category}
+                  </span>
                 </div>
                 <span className="text-[10px] font-bold uppercase tracking-wider text-purple-700 dark:text-purple-300 bg-purple-100 dark:bg-purple-950/80 px-2.5 py-1 rounded-full border border-purple-200 dark:border-purple-800/60">
                   {t.proficiency}
@@ -262,10 +355,16 @@ export const HomePage = () => {
               <SectionEyebrow>Core Capabilities</SectionEyebrow>
               <Heading level={2}>Specialized Operations Support</Heading>
               <Paragraph size="md" muted className="mt-2 max-w-lg">
-                Comprehensive executive support designed to relieve cognitive overload and streamline team execution.
+                Comprehensive executive support designed to relieve cognitive
+                overload and streamline team execution.
               </Paragraph>
             </div>
-            <Button to="/services" variant="outline" size="md" icon={ArrowRight}>
+            <Button
+              to="/services"
+              variant="outline"
+              size="md"
+              icon={ArrowRight}
+            >
               View All 6 Services & Deliverables
             </Button>
           </div>
@@ -281,10 +380,13 @@ export const HomePage = () => {
       {/* 4-Step Collaborative Workflow */}
       <section className="py-24">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 text-center max-w-2xl mb-16">
-          <SectionEyebrow className="justify-center">Simple Onboarding</SectionEyebrow>
+          <SectionEyebrow className="justify-center">
+            Simple Onboarding
+          </SectionEyebrow>
           <Heading level={2}>How We Work Together</Heading>
           <Paragraph size="md" muted className="mt-3">
-            Getting high-level administrative support shouldn't create more work for you. Here is our effortless 4-step framework:
+            Getting high-level administrative support shouldn't create more work
+            for you. Here is our effortless 4-step framework:
           </Paragraph>
         </div>
 
@@ -298,8 +400,12 @@ export const HomePage = () => {
                 <span className="text-4xl font-extrabold text-purple-200 dark:text-purple-900/40 block mb-4">
                   {st.number}
                 </span>
-                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">{st.title}</h3>
-                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-normal">{st.desc}</p>
+                <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
+                  {st.title}
+                </h3>
+                <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed font-normal">
+                  {st.desc}
+                </p>
               </div>
             ))}
           </div>
@@ -314,10 +420,16 @@ export const HomePage = () => {
               <SectionEyebrow>Proven Client Wins</SectionEyebrow>
               <Heading level={2}>Real Results for Real Founders</Heading>
               <Paragraph size="md" muted className="mt-2 max-w-lg">
-                Explore how operational delegation translated directly into reclaimed time, higher revenue, and zero missed deadlines.
+                Explore how operational delegation translated directly into
+                reclaimed time, higher revenue, and zero missed deadlines.
               </Paragraph>
             </div>
-            <Button to="/case-studies" variant="outline" size="md" icon={ArrowRight}>
+            <Button
+              to="/case-studies"
+              variant="outline"
+              size="md"
+              icon={ArrowRight}
+            >
               Read All Case Studies
             </Button>
           </div>
@@ -331,10 +443,15 @@ export const HomePage = () => {
       {/* Client Endorsements / Testimonials */}
       <section className="py-24">
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 text-center max-w-2xl mb-16">
-          <SectionEyebrow className="justify-center">Client Endorsements</SectionEyebrow>
-          <Heading level={2}>Trusted by Founders & Executives Worldwide</Heading>
+          <SectionEyebrow className="justify-center">
+            Client Endorsements
+          </SectionEyebrow>
+          <Heading level={2}>
+            Trusted by Founders & Executives Worldwide
+          </Heading>
           <Paragraph size="md" muted className="mt-3">
-            Read what entrepreneurs from New York to Melbourne have to say about partnering with Aria Vance Virtual Co.
+            Read what entrepreneurs from New York to Melbourne have to say about
+            partnering with {profile.brandName || "E-yhan Virtual Co."}.
           </Paragraph>
         </div>
 

@@ -36,7 +36,7 @@ export const AboutPage = () => {
     <div>
       <HeroBanner
         eyebrow="Behind The Operations"
-        title="Meet Aria Vance"
+        title={`Meet ${profile.name}`}
         description="Your dedicated executive right-hand, systems thinker, and fractional operations partner."
       />
 

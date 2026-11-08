@@ -39,7 +39,7 @@ export const MainLayout = () => {
       {/* Route Transition Loader */}
       {pageLoading && <PageLoader isExiting={isExiting} />}
 
-      <Navbar brandName={vaData.profile.brandName} />
+      <Navbar brandName={vaData.profile.brandName} name={vaData.profile.name} />
 
       <main className="flex-grow">
         <Outlet />

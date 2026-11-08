@@ -1,6 +1,10 @@
 import React from 'react';
+import { vaData } from '../../data/vaData';
 
 export const PageLoader = ({ isExiting = false }) => {
+  const name = vaData?.profile?.name || 'E-yhan';
+  const initials = name.replace(/[^a-zA-Z]/g, '').slice(0, 2).toUpperCase() || 'EY';
+
   return (
     <div
       aria-label="Loading page content"
@@ -40,7 +44,7 @@ export const PageLoader = ({ isExiting = false }) => {
             {/* Monogram Seal */}
             <div className="w-12 h-12 rounded-full bg-gradient-to-br from-purple-50 via-white to-purple-100/50 dark:from-slate-800 dark:via-slate-850 dark:to-purple-950/40 border border-purple-200/60 dark:border-purple-500/30 flex items-center justify-center shadow-inner">
               <span className="font-serif italic text-lg font-semibold tracking-wider bg-gradient-to-r from-purple-700 via-indigo-600 to-purple-800 dark:from-purple-300 dark:via-indigo-200 dark:to-purple-400 bg-clip-text text-transparent">
-                AV
+                {initials}
               </span>
             </div>
           </div>
@@ -48,7 +52,7 @@ export const PageLoader = ({ isExiting = false }) => {
           {/* Typography & Editorial Branding */}
           <div className="text-center space-y-1">
             <h4 className="text-[12px] font-bold tracking-[0.32em] uppercase text-slate-800 dark:text-slate-100">
-              Aria Vance
+              {name}
             </h4>
             <p className="text-[9px] font-medium tracking-[0.24em] uppercase text-purple-600 dark:text-purple-400">
               Executive Operations

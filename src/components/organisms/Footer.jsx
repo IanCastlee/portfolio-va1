@@ -11,10 +11,10 @@ export const Footer = ({ profile }) => {
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-xl bg-purple-600 text-white flex items-center justify-center font-bold">
-                AV
+                {profile?.name ? profile.name.replace(/[^a-zA-Z]/g, '').slice(0, 2).toUpperCase() : 'EY'}
               </div>
               <span className="font-bold text-xl text-white">
-                Aria Vance Virtual Co.
+                {profile?.brandName || "E-yhan Virtual Co."}
               </span>
             </div>
             <p className="text-sm text-slate-400 max-w-sm leading-relaxed">

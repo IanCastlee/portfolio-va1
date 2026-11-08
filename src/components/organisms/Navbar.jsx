@@ -4,7 +4,7 @@ import { Briefcase, Menu, X, ArrowRight, Calendar } from 'lucide-react';
 import { ThemeToggle } from '../molecules/ThemeToggle';
 import { Button } from '../atoms/Button';
 
-export const Navbar = ({ brandName = "Aria Vance Virtual Co." }) => {
+export const Navbar = ({ brandName = "E-yhan Virtual Co.", name = "E-yhan" }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const links = [
@@ -16,17 +16,19 @@ export const Navbar = ({ brandName = "Aria Vance Virtual Co." }) => {
     { label: 'Contact', path: '/contact' }
   ];
 
+  const initials = name ? name.replace(/[^a-zA-Z]/g, '').slice(0, 2).toUpperCase() : 'EY';
+
   return (
     <header className="sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800 transition-colors">
       <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 h-20 flex items-center justify-between">
         {/* Brand Logo */}
         <Link to="/" className="flex items-center gap-3 group">
           <div className="w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center font-bold text-lg shadow-md shadow-purple-500/20 group-hover:scale-105 transition-transform">
-            AV
+            {initials}
           </div>
           <div>
             <span className="font-bold text-base sm:text-lg text-slate-900 dark:text-white block leading-tight">
-              Aria Vance
+              {name}
             </span>
             <span className="text-[11px] font-semibold tracking-wider uppercase text-purple-600 dark:text-purple-400 block">
               Virtual Operations
