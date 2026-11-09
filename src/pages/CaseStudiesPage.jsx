@@ -17,7 +17,7 @@ export const CaseStudiesPage = () => {
 
       {/* Case Studies List */}
       <section className="py-20">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 space-y-12 max-w-5xl">
           {caseStudies.map((study) => (
             <CaseStudyCard key={study.id} caseStudy={study} />
           ))}
@@ -31,7 +31,7 @@ export const CaseStudiesPage = () => {
           <Heading level={2}>The Numbers Behind The Partnerships</Heading>
         </div>
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 max-w-5xl">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             {stats.map((st, idx) => (
               <div key={idx} className="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm">

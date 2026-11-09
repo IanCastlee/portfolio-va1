@@ -143,7 +143,7 @@ export const AboutPage = () => {
           </Paragraph>
         </div>
 
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16 max-w-5xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {tools.map((t, idx) => (
               <div
