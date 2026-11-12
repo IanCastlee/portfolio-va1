@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { twMerge } from 'tailwind-merge';
+import { clsx } from 'clsx';
 
 export const Button = ({
   children,
@@ -28,10 +30,11 @@ export const Button = ({
     secondary: "bg-slate-900 text-white hover:bg-slate-800 dark:bg-slate-800 dark:text-slate-100 dark:hover:bg-slate-700 border border-slate-700/50 shadow-sm",
     outline: "border border-slate-300 text-slate-800 hover:border-purple-600 hover:text-purple-600 hover:bg-purple-50 dark:border-slate-700 dark:text-slate-200 dark:hover:border-purple-400 dark:hover:text-purple-300 dark:hover:bg-purple-950/30",
     ghost: "text-slate-600 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-slate-800/60",
-    soft: "bg-purple-100 text-purple-700 hover:bg-purple-200 dark:bg-purple-900/40 dark:text-purple-300 dark:hover:bg-purple-900/60"
+    soft: "bg-purple-100 text-purple-700 hover:bg-purple-200 dark:bg-purple-900/40 dark:text-purple-300 dark:hover:bg-purple-900/60",
+    white: "bg-white text-purple-950 hover:bg-purple-50 hover:text-purple-900 dark:bg-white dark:text-purple-950 dark:hover:bg-purple-50 shadow-xl"
   };
 
-  const combinedClasses = `${base} ${sizes[size]} ${variants[variant]} ${className}`;
+  const combinedClasses = twMerge(clsx(base, sizes[size], variants[variant], className));
 
   if (to) {
     return (

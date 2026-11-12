@@ -26,10 +26,11 @@ export const CtaBanner = () => {
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Button
             to="/contact"
-            variant="secondary"
+            variant="white"
             size="lg"
-            className="bg-white text-purple-900 hover:bg-purple-50 hover:text-purple-900 shadow-xl"
+            className="font-bold text-purple-950 hover:text-purple-900 dark:text-purple-950 dark:hover:text-purple-900 shadow-2xl"
             icon={Calendar}
+            iconPosition="left"
           >
             Schedule Free 30-Min Discovery Call
           </Button>
@@ -37,7 +38,7 @@ export const CtaBanner = () => {
             to="/pricing"
             variant="outline"
             size="lg"
-            className="border-purple-300 text-white hover:bg-purple-800/80 hover:border-white"
+            className="border-purple-300 text-white hover:bg-purple-800/80 hover:border-white font-semibold"
             icon={ArrowRight}
           >
             Explore Retainer Packages
