@@ -25,6 +25,7 @@ import { ToolLogo } from "../components/atoms/ToolLogo";
 import { ServiceSummaryCard } from "../components/molecules/ServiceSummaryCard";
 import { CaseStudyCard } from "../components/molecules/CaseStudyCard";
 import { TestimonialCard } from "../components/molecules/TestimonialCard";
+import { RevealOnScroll } from "../components/atoms/RevealOnScroll";
 import { vaData } from "../data/vaData";
 
 export const HomePage = () => {
@@ -458,7 +459,9 @@ export const HomePage = () => {
         <div className="max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-14 xl:px-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((t, idx) => (
-              <TestimonialCard key={idx} testimonial={t} />
+              <RevealOnScroll key={idx} direction="up" delay={idx * 150}>
+                <TestimonialCard testimonial={t} />
+              </RevealOnScroll>
             ))}
           </div>
         </div>
