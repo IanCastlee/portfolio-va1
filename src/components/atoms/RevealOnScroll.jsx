@@ -1,26 +1,43 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+/**
+ * Scrollytelling / Scroll-Triggered Animation Atom for VA Portfolio
+ * Triggers smooth, GPU-accelerated entrance animations (fade, slide, zoom, cascade)
+ * when elements enter the viewport using IntersectionObserver.
+ */
 export const RevealOnScroll = ({
   children,
   className = '',
-  threshold = 0.15,
+  threshold = 0.1,
+  rootMargin = '0px 0px -40px 0px',
   delay = 0,
-  direction = 'up' // 'up', 'down', 'left', 'right', 'none'
+  duration = 700,
+  direction = 'up', // 'up', 'down', 'left', 'right', 'zoom', 'fade'
+  once = true,
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef(null);
 
   useEffect(() => {
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+      setIsVisible(true);
+      return;
+    }
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setIsVisible(true);
-          observer.unobserve(entry.target);
+          if (once) {
+            observer.unobserve(entry.target);
+          }
+        } else if (!once) {
+          setIsVisible(false);
         }
       },
       {
         threshold,
-        rootMargin: '0px 0px -50px 0px'
+        rootMargin,
       }
     );
 
@@ -32,19 +49,25 @@ export const RevealOnScroll = ({
     return () => {
       if (currentElem) observer.unobserve(currentElem);
     };
-  }, [threshold]);
+  }, [threshold, rootMargin, once]);
 
-  const getDirectionClasses = () => {
-    if (isVisible) return 'opacity-100 translate-x-0 translate-y-0';
+  const getAnimationStyles = () => {
+    if (isVisible) {
+      return 'opacity-100 translate-x-0 translate-y-0 scale-100';
+    }
+
     switch (direction) {
       case 'up':
-        return 'opacity-0 translate-y-8';
+        return 'opacity-0 translate-y-8 scale-[0.98]';
       case 'down':
-        return 'opacity-0 -translate-y-8';
+        return 'opacity-0 -translate-y-8 scale-[0.98]';
       case 'left':
         return 'opacity-0 translate-x-8';
       case 'right':
         return 'opacity-0 -translate-x-8';
+      case 'zoom':
+        return 'opacity-0 scale-90';
+      case 'fade':
       default:
         return 'opacity-0';
     }
@@ -53,8 +76,12 @@ export const RevealOnScroll = ({
   return (
     <div
       ref={elementRef}
-      style={{ transitionDelay: `${delay}ms` }}
-      className={`transition-all duration-700 ease-out ${getDirectionClasses()} ${className}`}
+      style={{
+        transitionDuration: `${duration}ms`,
+        transitionDelay: `${delay}ms`,
+        transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
+      }}
+      className={`transition-all will-change-[transform,opacity] ${getAnimationStyles()} ${className}`}
     >
       {children}
     </div>

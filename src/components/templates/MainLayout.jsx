@@ -4,6 +4,7 @@ import { Navbar } from '../organisms/Navbar';
 import { Footer } from '../organisms/Footer';
 import { CtaBanner } from '../organisms/CtaBanner';
 import { PageLoader } from '../molecules/PageLoader';
+import { ScrollProgress } from '../atoms/ScrollProgress';
 import { vaData } from '../../data/vaData';
 
 export const MainLayout = () => {
@@ -36,7 +37,8 @@ export const MainLayout = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-200">
-      {/* Route Transition Loader */}
+      {/* Route Transition Loader & Scrollytelling Progress Bar */}
+      <ScrollProgress />
       {pageLoading && <PageLoader isExiting={isExiting} />}
 
       <Navbar brandName={vaData.profile.brandName} name={vaData.profile.name} />
