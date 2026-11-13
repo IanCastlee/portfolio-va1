@@ -1,4 +1,4 @@
-# 💼 Aria Vance Virtual Co. — Multi-Page Executive VA Portfolio
+# 💼 E-yhan Virtual Co. — Multi-Page Executive VA Portfolio
 
 > A high-converting, professional **Multi-Page Portfolio Website** built for an **Executive Virtual Assistant & Operations Partner**. Built with **React 18**, **React Router v6**, **Tailwind CSS**, and **Vite**, featuring strict **Atomic Design Architecture**, **Dark & Light Mode**, detailed case studies with measurable ROI, retainer pricing packages, and discovery booking.
 
