@@ -3,6 +3,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { Navbar } from '../organisms/Navbar';
 import { Footer } from '../organisms/Footer';
 import { CtaBanner } from '../organisms/CtaBanner';
+import { MobileBottomNav } from '../organisms/MobileBottomNav';
 import { PageLoader } from '../molecules/PageLoader';
 import { ScrollProgress } from '../atoms/ScrollProgress';
 import { vaData } from '../../data/vaData';
@@ -36,7 +37,7 @@ export const MainLayout = () => {
   const isContactPage = pathname === '/contact';
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-200">
+    <div className="min-h-screen flex flex-col bg-slate-50 dark:bg-slate-900 text-slate-900 dark:text-slate-100 transition-colors duration-200 pb-16 md:pb-0">
       {/* Route Transition Loader & Scrollytelling Progress Bar */}
       <ScrollProgress />
       {pageLoading && <PageLoader isExiting={isExiting} />}
@@ -51,6 +52,9 @@ export const MainLayout = () => {
       {!isContactPage && <CtaBanner />}
 
       <Footer profile={vaData.profile} />
+
+      {/* Mobile Bottom Tab Bar with 4 Core Tabs & More Drawer */}
+      <MobileBottomNav />
     </div>
   );
 };

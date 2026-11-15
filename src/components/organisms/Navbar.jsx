@@ -1,12 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NavLink, Link } from 'react-router-dom';
-import { Briefcase, Menu, X, ArrowRight, Calendar } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import { ThemeToggle } from '../molecules/ThemeToggle';
 import { Button } from '../atoms/Button';
 
 export const Navbar = ({ brandName = "E-yhan Virtual Co.", name = "E-yhan" }) => {
-  const [mobileOpen, setMobileOpen] = useState(false);
-
   const links = [
     { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
@@ -55,8 +53,8 @@ export const Navbar = ({ brandName = "E-yhan Virtual Co.", name = "E-yhan" }) =>
           ))}
         </nav>
 
-        {/* Right CTA & Theme Switcher */}
-        <div className="hidden sm:flex items-center gap-3">
+        {/* Desktop Right CTA & Theme Switcher */}
+        <div className="hidden md:flex items-center gap-3">
           <ThemeToggle />
           <Button
             to="/contact"
@@ -68,52 +66,11 @@ export const Navbar = ({ brandName = "E-yhan Virtual Co.", name = "E-yhan" }) =>
           </Button>
         </div>
 
-        {/* Mobile menu toggle */}
-        <div className="flex sm:hidden items-center gap-2">
+        {/* Mobile Right: Theme Switcher situated right where the menu used to be */}
+        <div className="flex md:hidden items-center">
           <ThemeToggle />
-          <button
-            type="button"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className="p-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
-            aria-label="Toggle navigation"
-          >
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
         </div>
       </div>
-
-      {/* Mobile Drawer */}
-      {mobileOpen && (
-        <div className="sm:hidden bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 px-6 py-6 space-y-3 animate-fadeIn">
-          {links.map((link) => (
-            <NavLink
-              key={link.path}
-              to={link.path}
-              onClick={() => setMobileOpen(false)}
-              className={({ isActive }) =>
-                `block px-4 py-2.5 rounded-xl text-base font-semibold transition-colors ${
-                  isActive
-                    ? 'text-purple-600 dark:text-purple-400 bg-purple-50 dark:bg-purple-950/40'
-                    : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
-                }`
-              }
-            >
-              {link.label}
-            </NavLink>
-          ))}
-          <div className="pt-4 border-t border-slate-200 dark:border-slate-800">
-            <Button
-              to="/contact"
-              variant="primary"
-              size="md"
-              className="w-full"
-              onClick={() => setMobileOpen(false)}
-            >
-              Book Discovery Call
-            </Button>
-          </div>
-        </div>
-      )}
     </header>
   );
 };
